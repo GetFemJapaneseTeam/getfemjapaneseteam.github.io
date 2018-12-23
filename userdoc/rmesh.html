@@ -28,9 +28,9 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="up" title="ユーザドキュメント" href="index.html" />
     <link rel="next" title="任意の項を計算する - 高水準の汎用的な構築手順 - 弱形式言語" href="gasm_high.html" />
-    <link rel="prev" title="積分方法の選択" href="binteg.html" />
+    <link rel="prev" title="積分法の選択" href="binteg.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
  
 
@@ -46,13 +46,13 @@
           <a href="gasm_high.html" title="任意の項を計算する - 高水準の汎用的な構築手順 - 弱形式言語"
              accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="binteg.html" title="積分方法の選択"
+          <a href="binteg.html" title="積分法の選択"
              accesskey="P">前へ</a> |</li>
         <li><a href="https://savannah.nongnu.org/projects/getfem" <img src="../static/icon.png" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -72,7 +72,7 @@
 <a class="reference internal image-reference" href="../images/getfemuserrefine.png"><img alt="../images/getfemuserrefine.png" src="../images/getfemuserrefine.png" style="width: 7cm;" /></a>
 <p class="caption">2次元でのBankの手法の例</p>
 </div>
-<p>メッシュの細分化は、大部分が <em>ポステオリ</em> なエラーの見積もりと結びついています。 とても基本的なエラーの見積もりはファイル <tt class="file docutils literal"><span class="pre">getfem/getfem_error_estimate.h</span></tt> 内で利用できます:</p>
+<p>メッシュの細分化は、大部分が <em>ポステオリ</em> なエラーの見積もりと結びついています。 基本的なエラーの見積もりはファイル <tt class="file docutils literal"><span class="pre">getfem/getfem_error_estimate.h</span></tt> で利用できます。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">error_estimate</span><span class="p">(</span><span class="n">mim</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">rg</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -81,7 +81,7 @@
 <div class="math">
 <p><img src="../images/math/ce936de0228eaf54fab078cf5077b29d939c8a91.png" alt="\int_e |\hspace{0.01em}[\hspace{-0.12em}[
 \partial_n u ]\hspace{-0.12em}]\hspace{0.01em}|^2 d \Gamma,"/></p>
-</div><p><img class="math" src="../images/math/6b7fb647f0e5a51f94021fd1faafab264e4b66bf.png" alt="[\hspace{-0.12em}[\partial_n u]\hspace{-0.12em}]" style="vertical-align: -5px"/> は正規微分の分岐です。 次に、所与の要素の誤差推定値は、各内面の計算量の合計に要素の直径を掛けたものです。 この基本的な誤差の見積もりは、より精巧なもののモデルとみなすことができます。 これは、ハイレベルのジェネリック構築と <tt class="docutils literal"><span class="pre">neighbour_elt</span></tt> 補間変換を使用します( <a class="reference internal" href="gasm_high.html#ud-gasm-high-inter-elt-disc"><em>要素間エッジ/面間の不連続性の評価します。</em></a> )。</p>
+</div><p><img class="math" src="../images/math/6b7fb647f0e5a51f94021fd1faafab264e4b66bf.png" alt="[\hspace{-0.12em}[\partial_n u]\hspace{-0.12em}]" style="vertical-align: -5px"/> は正規微分の分岐です。 次に、所与の要素の誤差推定値は、各内面の計算量の合計に要素の直径を掛けたものです。 この基本的な誤差の見積もりは、より精巧なもののモデルとみなすことができます。 これは、高水準の汎用構築と <tt class="docutils literal"><span class="pre">neighbour_elt</span></tt> 補間変換を使用します( <a class="reference internal" href="gasm_high.html#ud-gasm-high-inter-elt-disc"><em>要素間エッジ/面間の不連続性の評価します。</em></a> )。</p>
 </div>
 
 
@@ -95,7 +95,7 @@
   </a></p>
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="binteg.html"
-                        title="前の章へ">積分方法の選択</a></p>
+                        title="前の章へ">積分法の選択</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="gasm_high.html"
                         title="次の章へ">任意の項を計算する - 高水準の汎用的な構築手順 - 弱形式言語</a></p>            <h3>Download</h3>
@@ -146,13 +146,13 @@
           <a href="gasm_high.html" title="任意の項を計算する - 高水準の汎用的な構築手順 - 弱形式言語"
              >次へ</a> |</li>
         <li class="right" >
-          <a href="binteg.html" title="積分方法の選択"
+          <a href="binteg.html" title="積分法の選択"
              >前へ</a> |</li>
         <li><a href="https://savannah.nongnu.org/projects/getfem" <img src="../static/icon.png" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

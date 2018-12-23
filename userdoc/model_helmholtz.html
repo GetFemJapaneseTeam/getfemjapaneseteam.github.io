@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Helmholtz要素 &mdash; GetFEM++</title>
+    <title>Helmholtzブリック要素 &mdash; GetFEM++</title>
     
     <link rel="stylesheet" href="../static/getfem.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -28,8 +28,8 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="モデル記述と基本モデルブリック" href="model.html" />
-    <link rel="next" title="Fourier-Robin要素" href="model_fourier_robin.html" />
+    <link rel="up" title="モデル記述と基本モデルブリック要素" href="model.html" />
+    <link rel="next" title="Fourier-Robin ブリック要素" href="model_fourier_robin.html" />
     <link rel="prev" title="他の “陽な”要素" href="model_explicit.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
  
@@ -43,7 +43,7 @@
           <a href="../genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="model_fourier_robin.html" title="Fourier-Robin要素"
+          <a href="model_fourier_robin.html" title="Fourier-Robin ブリック要素"
              accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="model_explicit.html" title="他の “陽な”要素"
@@ -52,8 +52,8 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="model.html" accesskey="U">モデル記述と基本モデルブリック</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li>
+          <li><a href="model.html" accesskey="U">モデル記述と基本モデルブリック要素</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -63,12 +63,12 @@
           <div class="body">
             
   <div class="section" id="helmholtz-brick">
-<span id="ud-model-helmholtz"></span><span id="index-0"></span><h1>Helmholtz要素<a class="headerlink" href="#helmholtz-brick" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>この要素は複素数と実数のHelmholtz問題を表しています。</p>
+<span id="ud-model-helmholtz"></span><span id="index-0"></span><h1>Helmholtzブリック要素<a class="headerlink" href="#helmholtz-brick" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このブリック要素は複素数と実数のHelmholtz問題を表しています。</p>
 <div class="math">
 <p><img src="../images/math/98f1263a87879913934e1acfc913680baa8c9e63.png" alt="\Delta u + k^2 u = \ldots"/></p>
 </div><p>ここで波数 <img class="math" src="../images/math/8c325612684d41304b9751c175df7bcc0f61f64f.png" alt="k" style="vertical-align: 0px"/> は実数または複素数値です。複素数のバージョンでは、複素数モデルを使用する必要があります（ <tt class="file docutils literal"><span class="pre">tests/helmholtz.cc</span></tt> を参照）。</p>
-<p>Helmholtz要素をモデルに追加する機能は:</p>
+<p>Helmholtzブリック要素をモデルに追加する関数は次の通りです。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">getfem</span><span class="o">::</span><span class="n">add_Helmholtz_brick</span><span class="p">(</span><span class="n">md</span><span class="p">,</span> <span class="n">mim</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">dataexpr</span><span class="p">,</span> <span class="n">region</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -89,7 +89,7 @@
                         title="前の章へ">他の &#8220;陽な&#8221;要素</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="model_fourier_robin.html"
-                        title="次の章へ">Fourier-Robin要素</a></p>            <h3>Download</h3>
+                        title="次の章へ">Fourier-Robin ブリック要素</a></p>            <h3>Download</h3>
             <p><a href="../download.html">Download GetFEM++ </a></p>
 	    <h3>Main documentations</h3>
 	    <ul>
@@ -134,7 +134,7 @@
           <a href="../genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="model_fourier_robin.html" title="Fourier-Robin要素"
+          <a href="model_fourier_robin.html" title="Fourier-Robin ブリック要素"
              >次へ</a> |</li>
         <li class="right" >
           <a href="model_explicit.html" title="他の “陽な”要素"
@@ -143,8 +143,8 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="model.html" >モデル記述と基本モデルブリック</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li>
+          <li><a href="model.html" >モデル記述と基本モデルブリック要素</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

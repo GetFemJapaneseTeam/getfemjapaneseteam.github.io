@@ -28,7 +28,7 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="up" title="ユーザドキュメント" href="index.html" />
     <link rel="next" title="References" href="../biblio.html" />
     <link rel="prev" title="付録A.有限要素法リスト" href="appendixA.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
@@ -52,7 +52,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -63,63 +63,63 @@
             
   <div class="section" id="appendix-b-cubature-method-list">
 <span id="ud-appendixb"></span><h1>付録B.立体求積法のリスト<a class="headerlink" href="#appendix-b-cubature-method-list" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>積分法は2種類あります。任意の関数の多項式と近似された積分（立方体式）の正確な積分。正確な積分は、すべての要素が多項式であり、幾何変換が線形である場合にのみ使用できます。</p>
-<p>積分法の記述子は、関数:</p>
+<p>積分法は2種類あります。任意の関数の多項式と近似された積分（立方体式）の完全積分。完全積分は、すべての要素が多項式であり、幾何変換が線形である場合にのみ使用できます。</p>
+<p>積分法の記述子は、次の関数を使用します。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">ppi</span> <span class="o">=</span> <span class="n">getfem</span><span class="o">::</span><span class="n">int_method_descriptor</span><span class="p">(</span><span class="s">&quot;name of method&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><span class="pre">&quot;name</span> <span class="pre">of</span> <span class="pre">method&quot;</span></tt> は既存のメソッドの中から選択される文字列です。</p>
 <p><tt class="docutils literal"><span class="pre">tests</span></tt> ディレクトリにある <tt class="docutils literal"><span class="pre">integration</span></tt> プログラムは、それぞれの積分法の次数を列挙して確認します。</p>
 <div class="section" id="exact-integration-methods">
-<h2>完全な積分法<a class="headerlink" href="#exact-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><em>GetFEM++</em> の正確な積分法のセットを与えます。これは、多項式が正確に積分されていることを意味します。しかし、その使用は（非常に）制限されており、推奨されていません。正確な積分法の使用は、多項式のための低レベル総称構築に限定されています。線形変換を伴う <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価要素と線形項では制限されています。高水準の汎用構築でこれらを使用することはできません。</p>
-<p>利用可能な正確な積分法のリストは以下の通りです</p>
+<h2>完全積分法<a class="headerlink" href="#exact-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>GetFEM++</em> の完全積分法のセットを与えます。これは、多項式が完全積分されていることを意味します。しかし、その使用は（非常に）制限されており、推奨されていません。完全積分法の使用は、多項式のための低水準総称構築に限定されています。線形変換を伴う <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価要素と線形項では制限されています。高水準の汎用構築でこれらを使用することはできません。</p>
+<p>利用可能な完全積分法のリストは以下の通りです</p>
 <blockquote>
 <div><table border="1" class="docutils" id="id5">
-<caption>正確な積分法</caption>
+<caption>完全積分法</caption>
 <colgroup>
 <col width="40%" />
 <col width="60%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&quot;IM_NONE()&quot;</span></tt></td>
-<td><p class="first last">ダミー積分法。</p>
+<td><p class="first last">ダミー積分法</p>
 </td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">&quot;IM_EXACT_SIMPLEX(n)&quot;</span></tt></td>
-<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照するシンプレックスの単体における多項式の正確な積分の説明。</p>
+<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照するシンプレックスの単体における多項式の完全積分の記述</p>
 </td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&quot;IM_PRODUCT(a,</span> <span class="pre">b)&quot;</span></tt></td>
-<td><p class="first last"><tt class="docutils literal"><span class="pre">a</span></tt> と <tt class="docutils literal"><span class="pre">b</span></tt> の凸包の直接の積である凸包面上の正確な積分の説明。</p>
+<td><p class="first last"><tt class="docutils literal"><span class="pre">a</span></tt> と <tt class="docutils literal"><span class="pre">b</span></tt> の凸包の直接の積である凸包面上の完全積分の記述</p>
 </td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">&quot;IM_EXACT_PARALLELEPIPED(n)&quot;</span></tt></td>
-<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照する平行6面体上の多項式の正確な積分の説明。</p>
+<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照する平行6面体上の多項式の完全積分の記述</p>
 </td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&quot;IM_EXACT_PRISM(n)&quot;</span></tt></td>
-<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照するプリズムへの多項式の正確な積分の説明</p>
+<td><p class="first last">次元 <tt class="docutils literal"><span class="pre">n</span></tt> を参照するプリズムへの多項式の完全積分の記述</p>
 </td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
-<p>平行6面体またはプリズムに正確な積分法の記述が存在しても、ほとんどの場合、そのような要素の幾何学的変換は非線形であり、正確な積分は使用できません。</p>
+<p>平行6面体またはプリズムに完全積分法の記述が存在しても、ほとんどの場合、そのような要素の幾何学的変換は非線形であり、完全積分は使用できません。</p>
 </div>
 <div class="section" id="newton-cotes-integration-methods">
 <h2>Newton Cotes積分法<a class="headerlink" href="#newton-cotes-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>シンプレックス、平行6面体、およびプリズムの <tt class="docutils literal"><span class="pre">K</span></tt> 次の Newton Cotes 積分は、 <tt class="docutils literal"><span class="pre">&quot;IM_NC(N,K)&quot;</span></tt> 、 <tt class="docutils literal"><span class="pre">&quot;IM_NC_PARALLELEPIPED(N,K)&quot;</span></tt> 、 <tt class="docutils literal"><span class="pre">&quot;IM_NC_PRISM(N,K)&quot;</span></tt> とします。</p>
 </div>
 <div class="section" id="gauss-integration-methods-on-dimension-1">
-<h2>次元1のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Gauss-Legendreの <tt class="docutils literal"><span class="pre">K</span></tt> （ <tt class="docutils literal"><span class="pre">K/2+1</span></tt> 点）の部分には、 <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS1D(K)&quot;</span></tt> と表示されます。Gauss-Lobatto-Legendre積分は、( <tt class="docutils literal"><span class="pre">K/2+1</span></tt> 点を持つ) <tt class="docutils literal"><span class="pre">K</span></tt> 次の部分に、 <tt class="docutils literal"><span class="pre">&quot;IM_GAUSSLOBATTO1D(K)&quot;</span></tt> と表示されます。これは <tt class="docutils literal"><span class="pre">K</span></tt> の奇数値に対してのみ利用可能です。Gauss-Lobatto積分は、集中質量の挙動をするために <tt class="docutils literal"><span class="pre">&quot;FEM_PK_GAUSSLOBATTO1D(K/2)&quot;</span></tt> と一緒に使用して一括処理を実行できます。</p>
+<h2>1次元のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">K</span></tt> 次（ <tt class="docutils literal"><span class="pre">K/2+1</span></tt> 点）のGauss-Legendreは、 <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS1D(K)&quot;</span></tt> と表記します。<tt class="docutils literal"><span class="pre">K</span></tt> 次（ <tt class="docutils literal"><span class="pre">K/2+1</span></tt> 点を持つ）のGauss-Lobatto-Legendre積分は <tt class="docutils literal"><span class="pre">&quot;IM_GAUSSLOBATTO1D(K)&quot;</span></tt> と表記します。これは <tt class="docutils literal"><span class="pre">K</span></tt> の奇数値に対してのみ利用可能です。Gauss-Lobatto積分は、集中質量の挙動をするために <tt class="docutils literal"><span class="pre">&quot;FEM_PK_GAUSSLOBATTO1D(K/2)&quot;</span></tt> と一緒に使用して一括処理を実行できます。</p>
 </div>
 <div class="section" id="gauss-integration-methods-on-dimension-2">
-<h2>次元2のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>2次元のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><table border="1" class="docutils" id="id6">
-<caption>次元2の積分法</caption>
+<caption>2次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -163,7 +163,7 @@
 </tbody>
 </table>
 <table border="1" class="docutils" id="id7">
-<caption>次元2の積分法</caption>
+<caption>2次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -290,7 +290,7 @@
 </tbody>
 </table>
 <table border="1" class="docutils" id="id8">
-<caption>次元2の積分法</caption>
+<caption>2次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -378,7 +378,7 @@
 <tr class="row-even"><td>&nbsp;</td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td><p class="first">`` <cite>IM_TRIANGLE（13）</cite> ``</p>
+<td><p class="first"><tt class="docutils literal"><span class="pre">&quot;IM_TRIANGLE(13)&quot;</span></tt></p>
 <p class="last">（<a class="reference internal" href="../biblio.html#encyclopcubature" id="id4">[EncyclopCubature]</a> を参照してください）</p>
 </td>
 </tr>
@@ -397,7 +397,7 @@
 </tbody>
 </table>
 <table border="1" class="docutils" id="id9">
-<caption>次元2の積分法</caption>
+<caption>2次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -466,14 +466,14 @@
 </tbody>
 </table>
 </div></blockquote>
-<p>1DGaussの積分の直積である <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(n,k)&quot;</span></tt> もあります。</p>
-<p><strong>重要な注記:</strong> <tt class="docutils literal"><span class="pre">IM_QUAD(k)</span></tt> は多項式の次数 <img class="math" src="../images/math/8c325612684d41304b9751c175df7bcc0f61f64f.png" alt="k" style="vertical-align: 0px"/> に対して厳密であり、 <img class="math" src="../images/math/1d12d36ff17f66936fc1fecced3d3e2ecaca2b41.png" alt="Q_k" style="vertical-align: -4px"/> 多項式の次数 <img class="math" src="../images/math/2d84cc881a826e822e877f3e77cdbe1a555de124.png" alt="2*k" style="vertical-align: 0px"/> を持つことを忘れないでください。例えば、 <tt class="docutils literal"><span class="pre">IM_QUAD(7)</span></tt> は、2つの <img class="math" src="../images/math/2eb0587f6e11a24013ee03f3f8275a93e9cc64e1.png" alt="Q_{2}" style="vertical-align: -4px"/> 多項式の積を正確に積分することはできません。一方、<tt class="docutils literal"><span class="pre">IM_GAUSS_PARALLELEPIPED(2,4)</span></tt> は、その積を正確に積分することができます...</p>
+<p>1次元Gaussの積分の直積である <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(n,k)&quot;</span></tt> もあります。</p>
+<p><strong>重要な注記:</strong> <tt class="docutils literal"><span class="pre">IM_QUAD(k)</span></tt> は多項式の次数 <img class="math" src="../images/math/8c325612684d41304b9751c175df7bcc0f61f64f.png" alt="k" style="vertical-align: 0px"/> に対して厳密であり、 <img class="math" src="../images/math/1d12d36ff17f66936fc1fecced3d3e2ecaca2b41.png" alt="Q_k" style="vertical-align: -4px"/> 多項式の次数 <img class="math" src="../images/math/2d84cc881a826e822e877f3e77cdbe1a555de124.png" alt="2*k" style="vertical-align: 0px"/> を持つことを忘れないでください。例えば、 <tt class="docutils literal"><span class="pre">IM_QUAD(7)</span></tt> は、2つの <img class="math" src="../images/math/2eb0587f6e11a24013ee03f3f8275a93e9cc64e1.png" alt="Q_{2}" style="vertical-align: -4px"/> 多項式の積を完全積分することはできません。一方、<tt class="docutils literal"><span class="pre">IM_GAUSS_PARALLELEPIPED(2,4)</span></tt> は、その積を完全積分することができます...</p>
 </div>
 <div class="section" id="gauss-integration-methods-on-dimension-3">
-<h2>次元3のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>3次元のGauss積分法<a class="headerlink" href="#gauss-integration-methods-on-dimension-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><table border="1" class="docutils" id="id10">
-<caption>次元3の積分法</caption>
+<caption>3次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -513,7 +513,7 @@
 <p class="last">1/24</p>
 </td>
 <td><p class="first"><tt class="docutils literal"><span class="pre">&quot;IM_TETRAHEDRON(2)&quot;</span></tt></p>
-<p>4点、次数 2} hspace{7em}</p>
+<p>4 points, order 2</p>
 <p><img class="math" src="../images/math/45c1a7f4abcd4163c81417ffa7369da0cbc32660.png" alt="a = \Frac{5 - \sqrt{5}}{20}" style="vertical-align: -13px"/></p>
 <p class="last"><img class="math" src="../images/math/8aebdfe2d63838515c6abbc9de2cad2cf8c0f0e0.png" alt="b = \Frac{5 + 3\sqrt{5}}{20}" style="vertical-align: -13px"/></p>
 </td>
@@ -521,7 +521,7 @@
 </tbody>
 </table>
 <table border="1" class="docutils" id="id11">
-<caption>次元3の積分法</caption>
+<caption>3次元の積分法</caption>
 <colgroup>
 <col width="44%" />
 <col width="22%" />
@@ -671,11 +671,11 @@
 </div>
 <div class="section" id="direct-product-of-integration-methods">
 <h2>積分法の直積<a class="headerlink" href="#direct-product-of-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">&quot;IM_PRODUCT(IM1,</span> <span class="pre">IM2)&quot;</span></tt> を使って、四辺形やプリズムの積分法を作ることができます。これは、2つの積分法の直積を与えます。 例えば、 <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(2,k)&quot;</span></tt> は <tt class="docutils literal"><span class="pre">&quot;IM_PRODUCT(IM_GAUSS1D(2,k),IM_GAUSS1D(2,k))&quot;</span></tt> の別名であり、 <tt class="docutils literal"><span class="pre">&quot;IM_QUAD&quot;</span></tt> の積分の代わりに使用することができます。</p>
+<p><tt class="docutils literal"><span class="pre">&quot;IM_PRODUCT(IM1,</span> <span class="pre">IM2)&quot;</span></tt> を使って、4辺形やプリズムの積分法を作ることができます。これは、2つの積分法の直積を与えます。 例えば、 <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(2,k)&quot;</span></tt> は <tt class="docutils literal"><span class="pre">&quot;IM_PRODUCT(IM_GAUSS1D(2,k),IM_GAUSS1D(2,k))&quot;</span></tt> の別名であり、 <tt class="docutils literal"><span class="pre">&quot;IM_QUAD&quot;</span></tt> の積分の代わりに使用することができます。</p>
 </div>
 <div class="section" id="specific-integration-methods">
 <h2>具体的な積分法<a class="headerlink" href="#specific-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ピラミッド型要素の場合、 <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID(im)&quot;</span></tt> は、6面体（例えば <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(3,5)&quot;</span></tt> ）からピラミッドへ積分 <tt class="docutils literal"><span class="pre">im</span></tt> 変換する積分法を提供します。これは、ピラミッド要素の有理数分数試行関数に特別に適合された特異な積分法です。</p>
+<p>ピラミッド型要素の場合、 <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID(im)&quot;</span></tt> は、6面体（例えば <tt class="docutils literal"><span class="pre">&quot;IM_GAUSS_PARALLELEPIPED(3,5)&quot;</span></tt> ）からピラミッドへ積分 <tt class="docutils literal"><span class="pre">im</span></tt> 変換する積分法を提供します。これは、ピラミッド要素の有理数試行関数に特別に適合された特異な積分法です。</p>
 </div>
 <div class="section" id="composite-integration-methods">
 <h2>コンポジット積分法<a class="headerlink" href="#composite-integration-methods" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -701,11 +701,11 @@
   <h3><a href="../contents.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">付録B.立体求積法のリスト</a><ul>
-<li><a class="reference internal" href="#exact-integration-methods">完全な積分法</a></li>
+<li><a class="reference internal" href="#exact-integration-methods">完全積分法</a></li>
 <li><a class="reference internal" href="#newton-cotes-integration-methods">Newton Cotes積分法</a></li>
-<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-1">次元1のGauss積分法</a></li>
-<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-2">次元2のGauss積分法</a></li>
-<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-3">次元3のGauss積分法</a></li>
+<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-1">1次元のGauss積分法</a></li>
+<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-2">2次元のGauss積分法</a></li>
+<li><a class="reference internal" href="#gauss-integration-methods-on-dimension-3">3次元のGauss積分法</a></li>
 <li><a class="reference internal" href="#direct-product-of-integration-methods">積分法の直積</a></li>
 <li><a class="reference internal" href="#specific-integration-methods">具体的な積分法</a></li>
 <li><a class="reference internal" href="#composite-integration-methods">コンポジット積分法</a></li>
@@ -772,7 +772,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

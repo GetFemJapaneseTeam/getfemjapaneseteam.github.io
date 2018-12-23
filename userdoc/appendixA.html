@@ -28,7 +28,7 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="up" title="ユーザドキュメント" href="index.html" />
     <link rel="next" title="付録B.立体求積法のリスト" href="appendixB.html" />
     <link rel="prev" title="剛体運動が大きい物体のALEサポート" href="model_ALE_rotating.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
@@ -52,7 +52,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -93,7 +93,7 @@
 <td><a class="first last reference internal image-reference" href="../images/getfemlistsymbols05.png"><img alt="../images/getfemlistsymbols05.png" class="align-center" src="../images/getfemlistsymbols05.png" style="width: 134.5px; height: 43.0px;" /></a>
 </td>
 </tr>
-<tr class="row-even"><td><p class="first last">3D要素の第3座標に沿った勾配の値。</p>
+<tr class="row-even"><td><p class="first last">3次元要素の第3座標に沿った勾配の値。</p>
 </td>
 <td><p class="first last">節点での勾配全体の値。</p>
 </td>
@@ -111,7 +111,7 @@
 </td>
 <td><p class="first last">第2座標に沿った2次導関数の値（2回）。</p>
 </td>
-<td><p class="first last">3Dで第3座標（2倍）に沿った2Dまたは2次導関数の2次交差導関数の値。</p>
+<td><p class="first last">3次元で第3座標（2倍）に沿った2次元または2次導関数の2次交差導関数の値。</p>
 </td>
 </tr>
 <tr class="row-odd"><td><a class="first last reference internal image-reference" href="../images/getfemlistsymbols09.png"><img alt="../images/getfemlistsymbols09.png" class="align-center" src="../images/getfemlistsymbols09.png" style="width: 162.5px; height: 165.5px;" /></a>
@@ -186,7 +186,7 @@
 </tbody>
 </table>
 </div></blockquote>
-<p>次元 <img class="math" src="../images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P" style="vertical-align: 0px"/> と次数 <img class="math" src="../images/math/dfb064112b6c94470339f6571f69d07afc1c024c.png" alt="K" style="vertical-align: 0px"/> の古典的なLagrange要素 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> の自由度の数は <img class="math" src="../images/math/8e6708174d7fb02035072e6f8d81188ded0fefd3.png" alt="\Frac{(P+K)!}{P!K!}" style="vertical-align: -13px"/> です。たとえば、次元2、 <img class="math" src="../images/math/833c9e67659dbd6950b2db8bb9e080e957b0b2bb.png" alt="(P = 2)" style="vertical-align: -4px"/> の場合、この値は <img class="math" src="../images/math/7a57f10c9a66b976894d667bb59d0f5c7b65beb8.png" alt="\Frac{(K+1) (K+2)}{2}" style="vertical-align: -13px"/> で、次元3の場合 <img class="math" src="../images/math/03b2a2ae00724457a9148cdb111a2fd0ad2b8eb3.png" alt="\Frac{(K+1) (K+2) (K+3)}{6}" style="vertical-align: -13px"/> です。</p>
+<p>次元 <img class="math" src="../images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P" style="vertical-align: 0px"/> と次数 <img class="math" src="../images/math/dfb064112b6c94470339f6571f69d07afc1c024c.png" alt="K" style="vertical-align: 0px"/> の古典的なLagrange要素 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> の自由度の数は <img class="math" src="../images/math/8e6708174d7fb02035072e6f8d81188ded0fefd3.png" alt="\Frac{(P+K)!}{P!K!}" style="vertical-align: -13px"/> です。たとえば、2次元、 <img class="math" src="../images/math/833c9e67659dbd6950b2db8bb9e080e957b0b2bb.png" alt="(P = 2)" style="vertical-align: -4px"/> の場合、この値は <img class="math" src="../images/math/7a57f10c9a66b976894d667bb59d0f5c7b65beb8.png" alt="\Frac{(K+1) (K+2)}{2}" style="vertical-align: -13px"/> で、3次元の場合 <img class="math" src="../images/math/03b2a2ae00724457a9148cdb111a2fd0ad2b8eb3.png" alt="\Frac{(K+1) (K+2) (K+3)}{6}" style="vertical-align: -13px"/> です。</p>
 <blockquote>
 <div><table border="1" class="figure docutils" id="id9">
 <span id="ud-fig-tetrahedronpk"></span><caption>4面体上の古典的なLagrange要素 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> の例。</caption>
@@ -219,7 +219,7 @@
 <p><em>GetFEM++</em> で使われる節点を数値化するための具体的例として、図 <a class="reference internal" href="#ud-fig-segmentpk"><em>セグメント</em></a> 、図 <a class="reference internal" href="#ud-fig-trianglepk"><em>3角形</em></a> と図 <a class="reference internal" href="#ud-fig-tetrahedronpk"><em>4面体</em></a> があります。数値表現をすると、</p>
 <div class="math">
 <p><img src="../images/math/238f1789f884d232d23ff6f4dc19c8ca6553b3ae.png" alt="i_0, i_1, ... i_P,"/></p>
-</div><p>インデックスは</p>
+</div><p>be some indices such that</p>
 <div class="math">
 <p><img src="../images/math/2cf13dc169542063071ceb59c214c142636e47c1.png" alt="0 \leq i_0, i_1, ... i_P \leq K, \ \mbox{ and } \ \sum_{n = 0}^{P} i_n = K."/></p>
 </div><p>節点の座標は次のように計算されます。</p>
@@ -228,7 +228,7 @@
 </div><p>ここで、 <img class="math" src="../images/math/aabcf179dbce3462fd6385bf5309d72783514da2.png" alt="S_0, S_1, ... S_N" style="vertical-align: -4px"/> は、シンプレックスの頂点です（ <img class="math" src="../images/math/09d710171ef1ee2eb117d0478b092cea0a370543.png" alt="K = 0" style="vertical-align: 0px"/> の特定の場合 <img class="math" src="../images/math/6ae87444b2c95da3350afea051ae4f80af280546.png" alt="a_{0, 0, ... 0} = \ds \sum_{n = 0}^{P} \Frac{1}{P+1}S_n" style="vertical-align: -21px"/> となります）。次に、各節点 <img class="math" src="../images/math/32ebf413db2a152be9471b3b7532f7ec05713105.png" alt="a_{i_0, i_1, ... i_P}" style="vertical-align: -6px"/> に対応する各基底関数は</p>
 <div class="math">
 <p><img src="../images/math/4b626569a55adafa84f8973561dd441296f01e26.png" alt="\phi_{i_0, i_1, ... i_P} = \prod_{n = 0}^{P} \prod_{j=0}^{i_n-1} \left(\Frac{K \lambda_n - j}{j+1}\right)."/></p>
-</div><p>ここで、 <img class="math" src="../images/math/2b98e716a26dd452a7c8229756391407d7931532.png" alt="\lambda_n" style="vertical-align: -3px"/> は重心座標です。つまり次のような次数1の多項式です。頂点 <img class="math" src="../images/math/c74a070eea97d9363f58a257e05e75fc69efa753.png" alt="S_n" style="vertical-align: -3px"/> での値は <img class="math" src="../images/math/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" alt="1" style="vertical-align: -1px"/> そしてその値は他の頂点では <img class="math" src="../images/math/bc1f9d9bf8a1b606a4188b5ce9a2af1809e27a89.png" alt="0" style="vertical-align: 0px"/> です。 参照要素では、</p>
+</div><p>ここで、 <img class="math" src="../images/math/2b98e716a26dd452a7c8229756391407d7931532.png" alt="\lambda_n" style="vertical-align: -3px"/> は重心座標です。つまり次のような次数1の多項式です。頂点 <img class="math" src="../images/math/c74a070eea97d9363f58a257e05e75fc69efa753.png" alt="S_n" style="vertical-align: -3px"/> での値は <img class="math" src="../images/math/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" alt="1" style="vertical-align: -1px"/> そしてその値は他の頂点では <img class="math" src="../images/math/bc1f9d9bf8a1b606a4188b5ce9a2af1809e27a89.png" alt="0" style="vertical-align: 0px"/> です。 参照要素では、以下が成り立ちます。</p>
 <div class="math">
 <p><img src="../images/math/a1afd228cef15ed8b009eaefb5287611108d82ea.png" alt="\lambda_n = x_n, \ \ 0 \leq n &lt; P,"/></p>
 </div><div class="math">
@@ -335,7 +335,7 @@
 </div><p>ここで、 <img class="math" src="../images/math/f7bf4393540415364175a89be310fd1e41ae2acb.png" alt="\widehat{\varphi}^1_i" style="vertical-align: -5px"/> 、および <img class="math" src="../images/math/15e444dbb219ba9f9d525bad5a611ff506f7bb7e.png" alt="\widehat{\varphi}^2_i" style="vertical-align: -5px"/> は、それぞれ第1要素と第2要素の基本関数です。</p>
 <blockquote>
 <div><table border="1" class="figure docutils" id="id10">
-<span id="ud-fig-prodpkdeux"></span><caption>古典的な次元2の <img class="math" src="../images/math/4ca81821dd88dc67ea4df97840e93fa7710af178.png" alt="Q_K" style="vertical-align: -4px"/> Lagrange要素の例。</caption>
+<span id="ud-fig-prodpkdeux"></span><caption>古典的な2次元の <img class="math" src="../images/math/4ca81821dd88dc67ea4df97840e93fa7710af178.png" alt="Q_K" style="vertical-align: -4px"/> Lagrange要素の例。</caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -355,10 +355,10 @@
 </table>
 </div></blockquote>
 <p><img class="math" src="../images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P" style="vertical-align: 0px"/> 次の次元の平行6面体上の <img class="math" src="../images/math/4ca81821dd88dc67ea4df97840e93fa7710af178.png" alt="Q_K" style="vertical-align: -4px"/> 要素は、はセグメント上の古典的 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素のテンソル積 <img class="math" src="../images/math/4b4cade9ca8a2c8311fafcf040bc5b15ca507f52.png" alt="P" style="vertical-align: 0px"/> として得られます。次数2の例は図 <a class="reference internal" href="#ud-fig-prodpkdeux"><em>次数2</em></a> に、次数3は図 <a class="reference internal" href="#ud-fig-prodpktrois"><em>次数3</em></a> に示されています。</p>
-<p><img class="math" src="../images/math/dc81a702a808a22a39ab369e824a2bbf78e0a332.png" alt="P &gt; 1" style="vertical-align: -1px"/> 次元のプリズムは、 <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元のシンプレックスとセグメントの直積です。このプリズム上の <img class="math" src="../images/math/ecbaf3e8115c13e5d91c4725adcb550226a3dc1d.png" alt="P_K \otimes P_K" style="vertical-align: -3px"/> 要素は、古典的な <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元の単項式上の古典的な <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素とセグメント上の <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元の古典的な <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素のシンプレックスのテンソル積です。<img class="math" src="../images/math/81d8964aeecc898dc57e776d17a8976df8558a50.png" alt="P=2" style="vertical-align: 0px"/> の場合は平行6面体と一致します。次数 <img class="math" src="../images/math/7cde695f2e4542fd01f860a89189f47a27143b66.png" alt="3" style="vertical-align: 0px"/> の例を図 <a class="reference internal" href="#ud-fig-prodpktrois"><em>次数 3</em></a> に示します。これは、各次元で同じ次数を持たないことも可能です。例を図 <a class="reference internal" href="#ud-fig-prism-p2-p1"><em>次数 3, プリズム</em></a> に示します。</p>
+<p><img class="math" src="../images/math/dc81a702a808a22a39ab369e824a2bbf78e0a332.png" alt="P &gt; 1" style="vertical-align: -1px"/> 次元のプリズムは、 <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元のシンプレックスとセグメントの直積です。このプリズム上の <img class="math" src="../images/math/ecbaf3e8115c13e5d91c4725adcb550226a3dc1d.png" alt="P_K \otimes P_K" style="vertical-align: -3px"/> 要素は、古典的な <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元のシンプレックス式上の古典的な <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素とセグメント上の <img class="math" src="../images/math/a7317f06d032356dd7c23dd2901026f91ab4f4c8.png" alt="P-1" style="vertical-align: -1px"/> 次元の古典的な <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素のシンプレックスのテンソル積です。<img class="math" src="../images/math/81d8964aeecc898dc57e776d17a8976df8558a50.png" alt="P=2" style="vertical-align: 0px"/> の場合は平行6面体と一致します。次数 <img class="math" src="../images/math/7cde695f2e4542fd01f860a89189f47a27143b66.png" alt="3" style="vertical-align: 0px"/> の例を図 <a class="reference internal" href="#ud-fig-prodpktrois"><em>次数 3</em></a> に示します。これは、各次元で同じ次数を持たないことも可能です。例を図 <a class="reference internal" href="#ud-fig-prism-p2-p1"><em>次数 3, プリズム</em></a> に示します。</p>
 <blockquote>
 <div><table border="1" class="figure docutils" id="id11">
-<span id="ud-fig-prodpktrois"></span><caption>次元3における古典的Lagrange要素の例。</caption>
+<span id="ud-fig-prodpktrois"></span><caption>3次元における古典的Lagrange要素の例。</caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
@@ -485,7 +485,7 @@
 <p><img class="math" src="../images/math/b930c3b8e0b88a064cc13bc215a2cf14cdbf60f2.png" alt=".\\" style="vertical-align: 22px"/></p>
 <blockquote>
 <div><table border="1" class="docutils" id="lagrange-fem-product-fem-pk-p-1-k1-fem-pk-1-k2">
-<caption>. <img class="math" src="../images/math/4646e141b5e139a165df95bb9672e948eef0ccb2.png" alt="P_{K_1} \otimes P_{K_2}" style="vertical-align: -5px"/> プリズム上のLagrange要素``&#8221;FEM_PRODUCT(FEM_PK(P-1, K1), FEM_PK(1, K2))&#8221;``</caption>
+<caption>. <img class="math" src="../images/math/4646e141b5e139a165df95bb9672e948eef0ccb2.png" alt="P_{K_1} \otimes P_{K_2}" style="vertical-align: -5px"/> プリズム上のLagrange要素 <tt class="docutils literal"><span class="pre">&quot;FEM_PRODUCT(FEM_PK(P-1,</span> <span class="pre">K1),</span> <span class="pre">FEM_PK(1,</span> <span class="pre">K2))&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -580,7 +580,7 @@
 </div>
 <div class="section" id="elements-with-hierarchical-basis">
 <h2>ハイアラーキ基底の要素<a class="headerlink" href="#elements-with-hierarchical-basis" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ハイアラーキ基底の背後にあるアイデアは、異なるレベルの解の記述です：粗いレベル、より洗練されたレベル...既往のな離散化では、いくつかの自由度は大まかな記述を表し、他のいくつかはより細かな定義などを表します。これは、離散化の余分な空間に対応します。ハイアラーキ基底には、これらの空間のそれぞれの基底が含まれています（これは、メッシュが洗練されている場合、古典的なLagrange要素では成り立ちません）。</p>
+<p>ハイアラーキ基底の背後にあるアイデアは、異なるレベルの解の記述です：粗いレベル、より洗練されたレベル...既往の離散化では、いくつかの自由度は大まかな記述を表し、他のいくつかはより細かな定義などを表します。これは、離散化の余分な空間に対応します。ハイアラーキ基底には、これらの空間のそれぞれの基底が含まれています（これは、メッシュが洗練されている場合、古典的なLagrange要素では成り立ちません）。</p>
 <p>この手法の利点は、剛性マトリックスの条件数を大幅に向上させることができ、局所的な結果の取得とマルチグリッドアプローチによる分解が可能であることです。</p>
 <div class="section" id="hierarchical-elements-with-respect-to-the-degree">
 <h3>次数に関するハイアラーキ的要素<a class="headerlink" href="#hierarchical-elements-with-respect-to-the-degree" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -892,7 +892,7 @@
 <h3>最小次数要素のRaviart-Thomas<a class="headerlink" href="#raviart-thomas-of-lowest-order-elements" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="figure align-center" id="ud-fig-triangle-comptrois">
 <a class="reference internal image-reference" href="../images/getfemlistRT0.png"><img alt="../images/getfemlistRT0.png" src="../images/getfemlistRT0.png" style="width: 951.6px; height: 861.6px;" /></a>
-<p class="caption">次元2と3のRT0要素。 (P+1 自由度、 H(div))</p>
+<p class="caption">2次元と3のRT0要素。 (P+1 自由度、 H(div))</p>
 </div>
 <p><img class="math" src="../images/math/b930c3b8e0b88a064cc13bc215a2cf14cdbf60f2.png" alt=".\\" style="vertical-align: 22px"/></p>
 <blockquote>
@@ -942,7 +942,7 @@
 <p><img class="math" src="../images/math/b930c3b8e0b88a064cc13bc215a2cf14cdbf60f2.png" alt=".\\" style="vertical-align: 22px"/></p>
 <blockquote>
 <div><table border="1" class="docutils" id="raviart-thomas-fem-rt0q-p">
-<caption>平行四辺形（四角形、6面体）上の最小次数要素のRaviart-Thomas <tt class="docutils literal"><span class="pre">&quot;FEM_RT0Q(P)&quot;</span></tt></caption>
+<caption>平行四辺形（4角形、6面体）上の最小次数要素のRaviart-Thomas <tt class="docutils literal"><span class="pre">&quot;FEM_RT0Q(P)&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -989,7 +989,7 @@
 <h3>Nedelec（またはWhitney）エッジ要素<a class="headerlink" href="#nedelec-or-whitney-edge-elements" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="figure align-center" id="ud-fig-triangle-compquatre">
 <a class="reference internal image-reference" href="../images/getfemlistnedelec.png"><img alt="../images/getfemlistnedelec.png" src="../images/getfemlistnedelec.png" style="width: 753.6px; height: 319.8px;" /></a>
-<p class="caption">次元2と3のNedelecエッジ要素。  (P(P+1)/2 dof, H(rot))</p>
+<p class="caption">2次元と3のNedelecエッジ要素。  (P(P+1)/2 dof, H(rot))</p>
 </div>
 <p><img class="math" src="../images/math/b930c3b8e0b88a064cc13bc215a2cf14cdbf60f2.png" alt=".\\" style="vertical-align: 22px"/></p>
 <blockquote>
@@ -1039,10 +1039,10 @@
 </div>
 </div>
 <div class="section" id="specific-elements-in-dimension-1">
-<h2>次元1の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>1次元の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="gausslobatto-element">
 <h3>GaussLobatto要素<a class="headerlink" href="#gausslobatto-element" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>1D GaussLobatto <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素は、セグメント上の古典的な有限要素法 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> に似ていますが、節点はGauss-Lobatto-Legendre直交次数 <img class="math" src="../images/math/c84f7cc9b72aea7afa42a289868f596f54947768.png" alt="2K-1" style="vertical-align: -1px"/> の規則で与えられます。このFEMは、より良好な調整された線形システムにつながることが知られており、対応する直角位相を使用して（セグメントまたは平行6面体に）質量分布を形成することができます。</p>
+<p>1次元 GaussLobatto <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> 要素は、セグメント上の古典的な有限要素法 <img class="math" src="../images/math/e162923f93315ac368d1fdf32c621cb03fbe4f0e.png" alt="P_K" style="vertical-align: -3px"/> に似ていますが、節点はGauss-Lobatto-Legendre直交次数 <img class="math" src="../images/math/c84f7cc9b72aea7afa42a289868f596f54947768.png" alt="2K-1" style="vertical-align: -1px"/> の規則で与えられます。このFEMは、より良好な調整された線形システムにつながることが知られており、対応する直角位相を使用して（セグメントまたは平行6面体に）質量分布を形成することができます。</p>
 <p>多項式の係数はMapleであらかじめ計算されています（これらの係数は不調和システムのインバージョンを必要とします）。したがって、以下の値のみに利用できます <img class="math" src="../images/math/dfb064112b6c94470339f6571f69d07afc1c024c.png" alt="K" style="vertical-align: 0px"/>: <img class="math" src="../images/math/96211369df7aaee43f3d2f1ab4d27d736f5bdc9a.png" alt="1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 24, 32" style="vertical-align: -4px"/> 。 <img class="math" src="../images/math/5af2e9ebb9aad97fdf868342a2b749153e8583b2.png" alt="K=1" style="vertical-align: -1px"/> と <img class="math" src="../images/math/5b454887e70b45dab09242b99740a3fe71eaea2f.png" alt="K=2" style="vertical-align: 0px"/> に対しては、古典的な有限要素法 <img class="math" src="../images/math/c946bff7a6f8eaaab33fa3229b9e5f3b2111ee28.png" alt="P1" style="vertical-align: -1px"/> と <img class="math" src="../images/math/77d9a9ade22342975dd98f9f1205c29df2369a02.png" alt="P2" style="vertical-align: 0px"/> であることに注意してください。</p>
 <blockquote>
 <div><table border="1" class="docutils" id="gausslobatto-fem-pk-gausslobatto1d-k">
@@ -1095,7 +1095,7 @@
 <a class="reference internal image-reference" href="../images/getfemlistsegmenthermite.png"><img alt="../images/getfemlistsegmenthermite.png" src="../images/getfemlistsegmenthermite.png" style="width: 466.8px; height: 48.6px;" /></a>
 <p class="caption">セグメント上のHermite要素 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/> 、4自由度、 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
 </div>
-<p>参照要素の基底関数</p>
+<p>参照要素の基底関数は次のとおりです。</p>
 <div class="math">
 <p><img src="../images/math/469c98f6b03d284ccd5a2cb4b4ff13a8f0a2c08e.png" alt="\begin{array}{ll}
   \widehat{\varphi}_0 = (2x+1)(x-1)^2,&amp;\ \ \ \widehat{\varphi}_1 = x(x-1)^2, \\
@@ -1201,7 +1201,7 @@
 </div>
 </div>
 <div class="section" id="specific-elements-in-dimension-2">
-<h2>次元2の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>2次元の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="elements-with-additional-bubble-functions">
 <h3>追加の気泡関数を持つ要素<a class="headerlink" href="#elements-with-additional-bubble-functions" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
@@ -1481,7 +1481,7 @@
 <a class="reference internal image-reference" href="../images/getfemlisttrianglehermite.png"><img alt="../images/getfemlisttrianglehermite.png" src="../images/getfemlisttrianglehermite.png" style="width: 349.8px; height: 351.6px;" /></a>
 <p class="caption">3角形のHermite要素, <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/>, 10 自由度, <img class="math" src="../images/math/ab76ee72b7a9a048ef4be97b58de75a52a1a8b3f.png" alt="C^0" style="vertical-align: 0px"/></p>
 </div>
-<p>参照要素の基底関数：</p>
+<p>参照要素の基底関数は次の通りです。</p>
 <div class="math">
 <p><img src="../images/math/e0bc092807ded98e32cfb9f2dfdb0459a2496156.png" alt="\begin{array}{ll}
 \widehat{\varphi}_0 = (1-x-y)(1+x+y-2x^2-2y^2-11xy),~~ &amp; (\widehat{\varphi}_0(0,0) = 1), \\
@@ -1600,7 +1600,7 @@
 <a class="reference internal image-reference" href="../images/getfemlistargyris.png"><img alt="../images/getfemlistargyris.png" src="../images/getfemlistargyris.png" style="width: 416.4px; height: 413.4px;" /></a>
 <p class="caption">Argyris要素、 <img class="math" src="../images/math/63103f61ea87d78047bf2b5be31547472b6af3ed.png" alt="P_5" style="vertical-align: -3px"/>, 21 自由度, <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
 </div>
-<p>参照要素の基底関数は次のとおりです:</p>
+<p>参照要素の基底関数は次のとおりです。</p>
 <div class="math">
 <p><img src="../images/math/b00c09363b6dae302379187994bb6be8db085e9a.png" alt="\begin{array}{ll}
 \widehat{\varphi}_{0}(x,y) = 1 - 10x^3 - 10y^3 + 15x^4 - 30x^2y^2 + 15y^4 - 6x^5 + 30x^3y^2 + 30x^2y^3 - 6y^5, &amp; (\widehat{\varphi}_0(0,0) = 1), \\
@@ -1677,7 +1677,7 @@
 <a class="reference internal image-reference" href="../images/getfemlistHCT.png"><img alt="../images/getfemlistHCT.png" src="../images/getfemlistHCT.png" style="width: 396.6px; height: 394.8px;" /></a>
 <p class="caption">Hsieh-Clough-Tocher (HCT) 要素, <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/>, 12 自由度, <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
 </div>
-<p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません。これは複合要素です。 3つのサブ3角形のそれぞれについて3次の多項式（図 <a class="reference internal" href="#ud-fig-hct-tr"><em>Hsieh-Clough-Tocher (HCT) 要素, , 12 自由度, </em></a> と <a class="reference internal" href="../biblio.html#ciarlet1978" id="id2">[ciarlet1978]</a> を参照）。この有限要素には <tt class="docutils literal"><span class="pre">&quot;IM_HCT_COMPOSITE&quot;</span></tt> 積分メソッドを使うことを強く推奨します。 自由度の数値は次のとおりです。最初の2番目と3番目の頂点のLagrange自由度は0,3,6です。第1の変数に対する導関数の第1、第4、第7、第2の変数に対する導関数は2,5,8であり、面0,1,2のそれぞれの正規導関数については9,10,11です。</p>
+<p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません。これは複合要素です。 3つのサブ3角形のそれぞれについて3次の多項式（図 <a class="reference internal" href="#ud-fig-hct-tr"><em>Hsieh-Clough-Tocher (HCT) 要素, , 12 自由度, </em></a> と <a class="reference internal" href="../biblio.html#ciarlet1978" id="id2">[ciarlet1978]</a> を参照）。この有限要素には <tt class="docutils literal"><span class="pre">&quot;IM_HCT_COMPOSITE&quot;</span></tt> 積分法を使うことを強く推奨します。 自由度の数値は次のとおりです。最初の2番目と3番目の頂点のLagrange自由度は0,3,6です。第1の変数に対する導関数の第1、第4、第7、第2の変数に対する導関数は2,5,8であり、面0,1,2のそれぞれの正規導関数については9,10,11です。</p>
 <blockquote>
 <div><table border="1" class="docutils" id="fem-hct-triangle-hct">
 <caption>三角 <tt class="docutils literal"><span class="pre">&quot;FEM_HCT_TRIANGLE&quot;</span></tt> 上のHCT要素</caption>
@@ -1774,15 +1774,15 @@
 </div></blockquote>
 </div>
 <div class="section" id="a-composite-element-on-quadrilaterals">
-<h3>四角形上の複合 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 要素<a class="headerlink" href="#a-composite-element-on-quadrilaterals" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>4角形上の複合 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 要素<a class="headerlink" href="#a-composite-element-on-quadrilaterals" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="figure align-center" id="ud-fig-qc1-tr">
 <a class="reference internal image-reference" href="../images/getfemlistquadc1composite.png"><img alt="../images/getfemlistquadc1composite.png" src="../images/getfemlistquadc1composite.png" style="width: 446.4px; height: 439.8px;" /></a>
-<p class="caption">分割された四辺形の複合要素 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/>, 16 自由度, <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
+<p class="caption">分割された4辺形の複合要素 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/>, 16 自由度, <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
 </div>
-<p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません。これは複合要素です。4つのサブ3角形のそれぞれの次数3の多項式です（ <a class="reference internal" href="#ud-fig-qc1-tr"><em>分割された四辺形の複合要素 , 16 自由度, </em></a> を参照）。Fraeijs de Veubeke-Sander 要素に対応します（ <a class="reference internal" href="../biblio.html#ciarlet1978" id="id3">[ciarlet1978]</a> を参照）。この有限要素では <tt class="docutils literal"><span class="pre">&quot;IM_QUADC1_COMPOSITE&quot;</span></tt> 積分法を使うことを強く推奨します。</p>
+<p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません。これは複合要素です。4つのサブ3角形のそれぞれの次数3の多項式です（ <a class="reference internal" href="#ud-fig-qc1-tr"><em>分割された4辺形の複合要素 , 16 自由度, </em></a> を参照）。Fraeijs de Veubeke-Sander 要素に対応します（ <a class="reference internal" href="../biblio.html#ciarlet1978" id="id3">[ciarlet1978]</a> を参照）。この有限要素では <tt class="docutils literal"><span class="pre">&quot;IM_QUADC1_COMPOSITE&quot;</span></tt> 積分法を使うことを強く推奨します。</p>
 <blockquote>
 <div><table border="1" class="docutils" id="fvs-fem-quadc1-composite">
-<caption>.四角形(FVS)上にある <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 複合要素複合要素 <tt class="docutils literal"><span class="pre">&quot;FEM_QUADC1_COMPOSITE&quot;</span></tt></caption>
+<caption>.4角形(FVS)上にある <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 複合要素複合要素 <tt class="docutils literal"><span class="pre">&quot;FEM_QUADC1_COMPOSITE&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -1827,12 +1827,12 @@
 <p><img class="math" src="../images/math/b930c3b8e0b88a064cc13bc215a2cf14cdbf60f2.png" alt=".\\" style="vertical-align: 22px"/></p>
 <div class="figure align-center" id="ud-fig-reduced-qc1-tr">
 <a class="reference internal image-reference" href="../images/getfemlistreducedquadc1composite.png"><img alt="../images/getfemlistreducedquadc1composite.png" src="../images/getfemlistreducedquadc1composite.png" style="width: 439.8px; height: 433.2px;" /></a>
-<p class="caption">四辺形の縮小複合要素、区分的 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/> 、12自由度、 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
+<p class="caption">4辺形の縮小複合要素、区分的 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/> 、12自由度、 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/></p>
 </div>
-<p>この要素は、その縮小形でも存在し、通常の導関数は各辺で次数1の多項式と仮定されます（図 <a class="reference internal" href="#ud-fig-reduced-qc1-tr"><em>四辺形の縮小複合要素、区分的  、12自由度、 </em></a> を参照）</p>
+<p>この要素は、その縮小形でも存在し、通常の導関数は各辺で次数1の多項式と仮定されます（図 <a class="reference internal" href="#ud-fig-reduced-qc1-tr"><em>4辺形の縮小複合要素、区分的  、12自由度、 </em></a> を参照）</p>
 <blockquote>
 <div><table border="1" class="docutils" id="fvs-fem-reduced-quadc1-composite">
-<caption>四角形（縮小FVS）の縮小 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 複合要素 <tt class="docutils literal"><span class="pre">&quot;FEM_REDUCED_QUADC1_COMPOSITE&quot;</span></tt></caption>
+<caption>4角形（縮小FVS）の縮小 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 複合要素 <tt class="docutils literal"><span class="pre">&quot;FEM_REDUCED_QUADC1_COMPOSITE&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -1877,10 +1877,10 @@
 </div>
 </div>
 <div class="section" id="specific-elements-in-dimension-3">
-<h2>次元3の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>3次元の特定の要素<a class="headerlink" href="#specific-elements-in-dimension-3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="lagrange-elements-on-3d-pyramid">
-<h3>3Dピラミッド上のLagrange要素<a class="headerlink" href="#lagrange-elements-on-3d-pyramid" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference internal" href="../biblio.html#gr-gh1999" id="id4">[GR-GH1999]</a> および <a class="reference internal" href="../biblio.html#be-co-du2010" id="id5">[BE-CO-DU2010]</a> に基づいて、 <em>GetFEM++</em> は0,1次および2次のいくつかのLagrangeピラミッド要素を提案します。詳細については、これらの参考文献を参照してください。提案された要素は、3角形面の標準 <img class="math" src="../images/math/a5b0256a78d58b6d5f7a53400b19e7747d2983fa.png" alt="P_1" style="vertical-align: -4px"/> または <img class="math" src="../images/math/107c7c8e5a64d81ed24331e510b777b7d08345b7.png" alt="P_2" style="vertical-align: -3px"/> Lagrange有限要素法と四角形面上の標準Lagrange有限要素法 <img class="math" src="../images/math/c16e423c8f499e0bef8c20078b04126aeb9417bc.png" alt="Q_1" style="vertical-align: -4px"/> または <img class="math" src="../images/math/f83bf0891a57ba8a1ee68d8c72f141ccbc14186d.png" alt="Q_2" style="vertical-align: -4px"/> です。</p>
+<h3>3次元ピラミッド上のLagrange要素<a class="headerlink" href="#lagrange-elements-on-3d-pyramid" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="../biblio.html#gr-gh1999" id="id4">[GR-GH1999]</a> および <a class="reference internal" href="../biblio.html#be-co-du2010" id="id5">[BE-CO-DU2010]</a> に基づいて、 <em>GetFEM++</em> は0,1次および2次のいくつかのLagrangeピラミッド要素を提案します。詳細については、これらの参考文献を参照してください。提案された要素は、3角形面の標準 <img class="math" src="../images/math/a5b0256a78d58b6d5f7a53400b19e7747d2983fa.png" alt="P_1" style="vertical-align: -4px"/> または <img class="math" src="../images/math/107c7c8e5a64d81ed24331e510b777b7d08345b7.png" alt="P_2" style="vertical-align: -3px"/> Lagrange有限要素法と4角形面上の標準Lagrange有限要素法 <img class="math" src="../images/math/c16e423c8f499e0bef8c20078b04126aeb9417bc.png" alt="Q_1" style="vertical-align: -4px"/> または <img class="math" src="../images/math/f83bf0891a57ba8a1ee68d8c72f141ccbc14186d.png" alt="Q_2" style="vertical-align: -4px"/> です。</p>
 <table border="1" class="figure docutils" id="id13">
 <span id="ud-fig-pyramid-lagrange"></span><caption>0次、1次、2次のピラミッド型要素上のLagrange要素</caption>
 <colgroup>
@@ -1905,7 +1905,7 @@
 </tr>
 </tbody>
 </table>
-<p>関連する幾何変換は、 K = 1 または2の場合の <tt class="docutils literal"><span class="pre">&quot;GT_PYRAMID(K)&quot;</span></tt> です。関連する積分法は <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID(im)&quot;</span></tt> です。ここで <tt class="docutils literal"><span class="pre">im</span></tt> は6面体の積分方法です。（あるいは積分法 <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID_COMPOSITE(im)&quot;</span></tt> です。ここで <tt class="docutils literal"><span class="pre">im</span></tt> は4面体の積分方法ですが、理論的にはそれほど正確ではありません。）形状関数は多項式ではなく有理数です。最初の次数については、形状関数が読み取られます。</p>
+<p>関連する幾何変換は、 K = 1 または2の場合の <tt class="docutils literal"><span class="pre">&quot;GT_PYRAMID(K)&quot;</span></tt> です。関連する積分法は <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID(im)&quot;</span></tt> です。ここで <tt class="docutils literal"><span class="pre">im</span></tt> は6面体の積分法です。（あるいは積分法 <tt class="docutils literal"><span class="pre">&quot;IM_PYRAMID_COMPOSITE(im)&quot;</span></tt> です。ここで <tt class="docutils literal"><span class="pre">im</span></tt> は4面体の積分法ですが、理論的にはそれほど正確ではありません。）形状関数は多項式ではなく有理数です。最初の次数については、形状関数が読み取られます。</p>
 <div class="math">
 <p><img src="../images/math/4fb295fd09759ee34f307beb88335d1b7fa5c45e.png" alt="\begin{array}{l}
 \widehat{\varphi}_{0}(x,y,z) =  \frac{1}{4}\left(1-x-y-z+\Frac{xy}{1-z}\right), \\
@@ -1914,10 +1914,10 @@
 \widehat{\varphi}_{3}(x,y,z) =  \frac{1}{4}\left(1+x+y-z+\Frac{xy}{1-z}\right), \\
 \widehat{\varphi}_{4}(x,y,z) =  z.\\
 \end{array}"/></p>
-</div><p>2次のために、次式を設定します</p>
+</div><p>2次のために、次式を設定します。</p>
 <div class="math">
 <p><img src="../images/math/5e55c929c57829a1f20169011e5cf65e1a469567.png" alt="\xi_0 = \Frac{1-z-x}{2}, ~~~\xi_1 = \Frac{1-z-y}{2}, ~~~\xi_2 = \Frac{1-z+x}{2}, ~~~\xi_3 = \Frac{1-z+y}{2}, ~~~\xi_4 = z,"/></p>
-</div><p>形状関数の読み込み：</p>
+</div><p>形状関数の読み込みは次の通りです。</p>
 <div class="math">
 <p><img src="../images/math/8c0edc34593ee89398112ce70a378c1a493487f4.png" alt="\begin{array}{l}
 \widehat{\varphi}_{0}(x,y,z) = \Frac{\xi_0 \xi_1}{(1-\xi_4)^2}((1-\xi_4-2\xi_0)(1-\xi_4-2\xi_1) -\xi_4(1-\xi_4)), \\
@@ -1936,7 +1936,7 @@
 \widehat{\varphi}_{13}(x,y,z) = \xi_4(2\xi_4-1). \\
 \end{array}"/></p>
 </div><table border="1" class="docutils" id="lagrange-fem-pyramid-lagrange-k">
-<caption>次数0,1または2の連続Lagrange要素 <tt class="docutils literal"><span class="pre">&quot;FEM_PYRAMID_LAGRANGE(K)&quot;</span></tt></caption>
+<caption>0,1または2次の連続Lagrange要素 <tt class="docutils literal"><span class="pre">&quot;FEM_PYRAMID_LAGRANGE(K)&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -2001,7 +2001,7 @@
 </tbody>
 </table>
 <table border="1" class="docutils" id="lagrange-fem-pyramid-discontinuous-lagrange-k">
-<caption>次数0、1、または2の不連続Lagrange要素 <tt class="docutils literal"><span class="pre">&quot;FEM_PYRAMID_DISCONTINUOUS_LAGRANGE(K)&quot;</span></tt></caption>
+<caption>0、1、または2次の不連続Lagrange要素 <tt class="docutils literal"><span class="pre">&quot;FEM_PYRAMID_DISCONTINUOUS_LAGRANGE(K)&quot;</span></tt></caption>
 <colgroup>
 <col width="14%" />
 <col width="14%" />
@@ -2199,7 +2199,7 @@
 <a class="reference internal image-reference" href="../images/getfemlisttetrahedronhermite.png"><img alt="../images/getfemlisttetrahedronhermite.png" src="../images/getfemlisttetrahedronhermite.png" style="width: 348.6px; height: 348.6px;" /></a>
 <p class="caption">4面体のHermite要素、 <img class="math" src="../images/math/9090f2e6bd5da465fea10a8c755d64e9185f61f1.png" alt="P_3" style="vertical-align: -3px"/>, 20 自由度, <img class="math" src="../images/math/ab76ee72b7a9a048ef4be97b58de75a52a1a8b3f.png" alt="C^0" style="vertical-align: 0px"/></p>
 </div>
-<p>参照要素の基底関数：</p>
+<p>参照要素の基底関数は次の通りです。</p>
 <div class="math">
 <p><img src="../images/math/60dda1305dee3e380eba47a9729bf9ad919a772e.png" alt="\begin{array}{ll}
 \widehat{\varphi}_{0}(x,y) = 1 - 3x^2 - 13xy - 13xz - 3y^2 - 13yz - 3z^2 + 2x^3 + 13x^2y + 13x^2z &amp; \\
@@ -2224,7 +2224,7 @@
 \widehat{\varphi}_{18}(x,y) = 27xz - 27x^2z - 27xyz - 27xz^2, &amp; (\widehat{\varphi}_{18}(1/3,0,1/3) = 1),\\
 \widehat{\varphi}_{19}(x,y) = 27xy - 27x^2y - 27xy^2 - 27xyz, &amp; (\widehat{\varphi}_{19}(1/3,1/3,0) = 1),\\
 \end{array}"/></p>
-</div><p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません(行列 <img class="math" src="../images/math/5d1e4485dc90c450e8c76826516c1b2ccb8fce16.png" alt="M" style="vertical-align: 0px"/> は単位行列ではありません）。実際の要素では、基底関数の線形結合 <img class="math" src="../images/math/048b001ec1c9c519ea96ca6e3c0b04ced1193acb.png" alt="\widehat{\varphi}_8" style="vertical-align: -4px"/> 、 <img class="math" src="../images/math/3af7e3d40ae713bc56138c63d857bfa71847f65c.png" alt="\widehat{\varphi}_{12}" style="vertical-align: -4px"/> と <img class="math" src="../images/math/e693fee745c4a6d29bb6486cbb157220d17e7f23.png" alt="\widehat{\varphi}_{16}" style="vertical-align: -4px"/> は、対応する頂点の勾配を一致させるために使用されます。他の頂点のアイテム。</p>
+</div><p>この要素は <img class="math" src="../images/math/1dc1c0119a604b91be9142370dc3159b6a9bbcb9.png" alt="\tau" style="vertical-align: 0px"/> 等価ではありません(行列 <img class="math" src="../images/math/5d1e4485dc90c450e8c76826516c1b2ccb8fce16.png" alt="M" style="vertical-align: 0px"/> は単位行列ではありません）。実際の要素では、基底関数の線形結合 <img class="math" src="../images/math/048b001ec1c9c519ea96ca6e3c0b04ced1193acb.png" alt="\widehat{\varphi}_8" style="vertical-align: -4px"/> 、 <img class="math" src="../images/math/3af7e3d40ae713bc56138c63d857bfa71847f65c.png" alt="\widehat{\varphi}_{12}" style="vertical-align: -4px"/> と <img class="math" src="../images/math/e693fee745c4a6d29bb6486cbb157220d17e7f23.png" alt="\widehat{\varphi}_{16}" style="vertical-align: -4px"/> は、対応する頂点の勾配を一致させるために使用されます。他の頂点は同上。</p>
 <blockquote>
 <div><table border="1" class="docutils" id="hermite-fem-hermite-3">
 <caption>4面体のHermite要素 <tt class="docutils literal"><span class="pre">&quot;FEM_HERMITE(3)&quot;</span></tt></caption>
@@ -2298,24 +2298,24 @@
 <li><a class="reference internal" href="#nedelec-or-whitney-edge-elements">Nedelec（またはWhitney）エッジ要素</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#specific-elements-in-dimension-1">次元1の特定の要素</a><ul>
+<li><a class="reference internal" href="#specific-elements-in-dimension-1">1次元の特定の要素</a><ul>
 <li><a class="reference internal" href="#gausslobatto-element">GaussLobatto要素</a></li>
 <li><a class="reference internal" href="#hermite-element">Hermite要素</a></li>
 <li><a class="reference internal" href="#lagrange-element-with-an-additional-bubble-function">追加の気泡関数を備えたLagrange要素</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#specific-elements-in-dimension-2">次元2の特定の要素</a><ul>
+<li><a class="reference internal" href="#specific-elements-in-dimension-2">2次元の特定の要素</a><ul>
 <li><a class="reference internal" href="#elements-with-additional-bubble-functions">追加の気泡関数を持つ要素</a></li>
 <li><a class="reference internal" href="#non-conforming-element">不適合 <img class="math" src="../images/math/a5b0256a78d58b6d5f7a53400b19e7747d2983fa.png" alt="P_1" style="vertical-align: -4px"/> 要素</a></li>
 <li><a class="reference internal" href="#id1">Hermite要素</a></li>
 <li><a class="reference internal" href="#morley-element">Morley要素</a></li>
 <li><a class="reference internal" href="#argyris-element">Argyris要素</a></li>
 <li><a class="reference internal" href="#hsieh-clough-tocher-element">Hsieh-Clough-Tocher要素</a></li>
-<li><a class="reference internal" href="#a-composite-element-on-quadrilaterals">四角形上の複合 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 要素</a></li>
+<li><a class="reference internal" href="#a-composite-element-on-quadrilaterals">4角形上の複合 <img class="math" src="../images/math/ff595c8c8836036624dec51f27480f9316d0e9c0.png" alt="C^1" style="vertical-align: 0px"/> 要素</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#specific-elements-in-dimension-3">次元3の特定の要素</a><ul>
-<li><a class="reference internal" href="#lagrange-elements-on-3d-pyramid">3Dピラミッド上のLagrange要素</a></li>
+<li><a class="reference internal" href="#specific-elements-in-dimension-3">3次元の特定の要素</a><ul>
+<li><a class="reference internal" href="#lagrange-elements-on-3d-pyramid">3次元ピラミッド上のLagrange要素</a></li>
 <li><a class="reference internal" href="#id6">追加の気泡関数を持つ要素</a></li>
 <li><a class="reference internal" href="#id7">Hermite要素</a></li>
 </ul>
@@ -2383,7 +2383,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

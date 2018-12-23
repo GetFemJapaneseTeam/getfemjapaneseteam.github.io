@@ -71,20 +71,21 @@
 </ul>
 </div></blockquote>
 <p>(Xquartz is not strictly necessary but more confortable).</p>
-<p>Then execute on a console (if not already done),</p>
-<blockquote>
-<div>$ brew tap homebrew/science</div></blockquote>
 <p>Then, if you download the current git version</p>
 <blockquote>
 <div><p>$ brew install m4</p>
 <p>$ brew install automake</p>
 <p>$ brew install libtool</p>
 </div></blockquote>
-<p>For the sequential mumps,</p>
-<blockquote>
-<div><p>$ brew options mumps</p>
-<p>$ brew install mumps &#8211;without-mpi</p>
-</div></blockquote>
+<dl class="docutils">
+<dt>For the sequential mumps,</dt>
+<dd><p class="first">$ brew tap dpo/openblas</p>
+<p>$ brew tap-pin dpo/openblas</p>
+<p>$ brew options ipopt</p>
+<p>$ brew options mumps</p>
+<p class="last">$ brew install mumps &#8211;without-mpi</p>
+</dd>
+</dl>
 <p>For the parallel one, just forget &#8211;without-mpi and install also mpi and metis.</p>
 <p>For Qhull</p>
 <blockquote>
@@ -171,10 +172,10 @@ together with at least <tt class="docutils literal"><span class="pre">numpy</spa
 <li><p class="first">If you want to use a specific <strong>BLAS</strong> library, you may have to
 supply the necessary link flags and libs to the configure script
 with:</p>
-<div class="highlight-c++"><pre>$ ./configure BLAS_LIBS="-L/path/to/lib -lfoo -lbar ....etc"</pre>
+<div class="highlight-c++"><pre>$ ./configure BLAS_LIBS=&quot;-L/path/to/lib -lfoo -lbar ....etc&quot;</pre>
 </div>
 <p>for example:</p>
-<div class="highlight-c++"><pre>$ ./configure BLAS_LIBS="-L/usr/lib/sse2/atlas -lblas"</pre>
+<div class="highlight-c++"><pre>$ ./configure BLAS_LIBS=&quot;-L/usr/lib/sse2/atlas -lblas&quot;</pre>
 </div>
 </li>
 <li><p class="first">If you want to set the prefix directory where to install the library
@@ -262,7 +263,7 @@ non-GNU compiler, gcc/g++ (&gt;= 4.8) should be a safe solution.</p>
 <tt class="docutils literal"><span class="pre">exec</span> <span class="pre">loader.sce;</span></tt></li>
 <li>You can try to launch a demo with:
 <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">demos;</span></tt>
-<tt class="docutils literal"><span class="pre">exec</span> <span class="pre">demo_static_contact.sce;</span></tt></li>
+<tt class="docutils literal"><span class="pre">exec</span> <span class="pre">demostatic_contact.sce;</span></tt></li>
 </ul>
 </div></blockquote>
 </div>

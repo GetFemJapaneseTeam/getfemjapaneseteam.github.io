@@ -986,6 +986,17 @@ are not allowed for non-coercive problems.
 </dd></dl>
 
 <dl class="method">
+<dt id="getfem.Model.add_linear_twodomain_term">
+<tt class="descname">add_linear_twodomain_term</tt><big>(</big><em>mim</em>, <em>expression</em>, <em>region</em>, <em>secondary_domain</em>, <em>is_symmetric=None</em>, <em>*args</em><big>)</big><a class="headerlink" href="#getfem.Model.add_linear_twodomain_term" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Synopsis: ind = Model.add_linear_twodomain_term(self, MeshIm mim, string expression, int region, string secondary_domain[, int is_symmetric[, int is_coercive]])</p>
+<p>Adds a linear term given by a weak form language expression like
+Model.add_linear_term() but for an integration on a direct
+product of two domains, a first specfied by <tt class="docutils literal"><span class="pre">mim</span></tt> and <tt class="docutils literal"><span class="pre">region</span></tt>
+and a second one by <tt class="docutils literal"><span class="pre">secondary_domain</span></tt> which has to be declared
+first into the model.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="getfem.Model.add_macro">
 <tt class="descname">add_macro</tt><big>(</big><em>name</em>, <em>expr</em><big>)</big><a class="headerlink" href="#getfem.Model.add_macro" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Define a new macro for the high generic assembly language.
@@ -1186,6 +1197,17 @@ If you are not sure, the better is to declare the term not symmetric
 and not coercive. But some solvers (conjugate gradient for instance)
 are not allowed for non-coercive problems.
 <cite>brickname</cite> is an otpional name for the brick.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getfem.Model.add_nonlinear_twodomain_term">
+<tt class="descname">add_nonlinear_twodomain_term</tt><big>(</big><em>mim</em>, <em>expression</em>, <em>region</em>, <em>secondary_domain</em>, <em>is_symmetric=None</em>, <em>*args</em><big>)</big><a class="headerlink" href="#getfem.Model.add_nonlinear_twodomain_term" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Synopsis: ind = Model.add_nonlinear_twodomain_term(self, MeshIm mim, string expression, int region, string secondary_domain[, int is_symmetric[, int is_coercive]])</p>
+<p>Adds a nonlinear term given by a weak form language expression like
+Model.add_nonlinear_term() but for an integration on a direct
+product of two domains, a first specfied by <tt class="docutils literal"><span class="pre">mim</span></tt> and <tt class="docutils literal"><span class="pre">region</span></tt>
+and a second one by <tt class="docutils literal"><span class="pre">secondary_domain</span></tt> which has to be declared
+first into the model.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1648,6 +1670,14 @@ condition. Return the brick index in the model.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="getfem.Model.add_standard_secondary_domain">
+<tt class="descname">add_standard_secondary_domain</tt><big>(</big><em>name</em>, <em>mim</em>, <em>region=-1</em><big>)</big><a class="headerlink" href="#getfem.Model.add_standard_secondary_domain" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Add a secondary domain to the model which can be used in a weak-form language expression for integration on the product of two domains. <cite>name</cite> is the name
+of the secondary domain, <cite>mim</cite> is an integration method on this domain
+and <cite>region</cite> the region on which the integration is to be performed.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="getfem.Model.add_theta_method_for_first_order">
 <tt class="descname">add_theta_method_for_first_order</tt><big>(</big><em>varname</em>, <em>theta</em><big>)</big><a class="headerlink" href="#getfem.Model.add_theta_method_for_first_order" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Attach a theta method for the time discretization of the variable
@@ -1661,6 +1691,16 @@ of the variable.</p>
 <dd><p>Attach a theta method for the time discretization of the variable
 <cite>varname</cite>. Valid only if there is at most second order time derivative
 of the variable.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="getfem.Model.add_twodomain_source_term">
+<tt class="descname">add_twodomain_source_term</tt><big>(</big><em>mim</em>, <em>expression</em>, <em>region</em>, <em>secondary_domain</em><big>)</big><a class="headerlink" href="#getfem.Model.add_twodomain_source_term" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Adds a source term given by a weak form language expression like
+Model.add_source_term() but for an integration on a direct
+product of two domains, a first specfied by <tt class="docutils literal"><span class="pre">mim</span></tt> and <tt class="docutils literal"><span class="pre">region</span></tt>
+and a second one by <tt class="docutils literal"><span class="pre">secondary_domain</span></tt> which has to be declared
+first into the model.</p>
 </dd></dl>
 
 <dl class="method">

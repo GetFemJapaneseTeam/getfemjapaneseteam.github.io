@@ -67,44 +67,52 @@
 <dl class="function">
 <dt id="getfem.asm_generic">
 <tt class="descname">asm_generic</tt><big>(</big><em>mim</em>, <em>order</em>, <em>expression</em>, <em>region</em>, <em>model=None</em>, <em>*args</em><big>)</big><a class="headerlink" href="#getfem.asm_generic" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Synopsis: (...) = asm_generic(MeshIm mim, int order, string expression, int region, [Model model,] [string varname, int is_variable[, {MeshFem mf, MeshImd mimd}], value], ...)</p>
+<dd><p>Synopsis: (...) = asm_generic(MeshIm mim, int order, string expression, int region, [Model model, [&#8216;Secondary_domain&#8217;, &#8216;name&#8217;,]] [string varname, int is_variable[, {MeshFem mf, MeshImd mimd}], value], [&#8216;select_output&#8217;, &#8216;varname1&#8217;[, &#8216;varname2]], ...)</p>
 <p>High-level generic assembly procedure for volumic or boundary assembly.</p>
 <p>Performs the generic assembly of <cite>expression</cite> with the integration
 method <cite>mim</cite> on the mesh region of index <cite>region</cite> (-1 means all
-the element of the mesh). The same mesh should be shared by
+elements of the mesh). The same mesh should be shared by
 the integration method and all the finite element methods or
 mesh_im_data corresponding to the variables.</p>
 <p><cite>order</cite> indicates either that the (scalar) potential
 (order = 0) or the (vector) residual (order = 1) or the
 tangent (matrix) (order = 2) is to be computed.</p>
 <p><cite>model</cite> is an optional parameter allowing to take into account
-all variables and data of a model.</p>
-<p>The variables and constant (data) are listed after the
-region number (or optionally the model).
-For each variable/constant, first the variable/constant
-name should be given (as it is referred in the assembly string), then
-1 if it is a variable or 0 for a constant, then the finite element
-method if it is a fem variable/constant or the mesh_im_data if it is
-data defined on integration points, and the vector representing
-the value of the variable/constant. It is possible to give an arbitrary
-number of variable/constant. The difference between a variable and a
-constant is that automatic differentiation is done with respect to
-variables only (see GetFEM++ user documentation). Test functions are
-only available for variables, not for constants.</p>
+all variables and data of a model. Note that all enabled variables
+of the model will occupy space in the returned vector/matrix
+corresponding to their degrees of freedom in the global system, even
+if they are not present in <cite>expression</cite>.</p>
+<p>The variables and constants (data) are listed after the region number
+(or optionally the model).
+For each variable/constant, a name must be given first (as it is
+referred in the assembly string), then an integer equal to 1 or 0
+is expected respectively for declaring a variable or a constant,
+then the finite element method if it is a fem variable/constant or
+the mesh_im_data if it is data defined on integration points, and
+the vector representing the value of the variable/constant.
+It is possible to give an arbitrary number of variable/constant.
+The difference between a variable and a constant is that test
+functions are only available for variables, not for constants.</p>
+<p><cite>select_output</cite> is an optional parameter which allows to reduce the
+output vecotr (for <cite>order</cite> equal to 1) or the matrix (for <cite>order</cite>
+equal to 2) to the degrees of freedom of the specified variables.
+One variable has to be specified for a vector ouptut and two for a
+matrix output.</p>
 <p>Note that if several variables are given, the assembly of the
 tangent matrix/residual vector will be done considering the order
 in the call of the function (the degrees of freedom of the first
-variable, then of the second, and so on). If a model is provided,
-all degrees of freedom of the model will be counted first.</p>
+variable, then of the second one, and so on). If a model is provided,
+all degrees of freedom of the model will be counted first, even if
+some of the model variables do not appear in <cite>expression</cite>.</p>
 <p>For example, the L2 norm of a vector field &#8220;u&#8221; can be computed with:</p>
-<div class="highlight-python"><pre>gf_compute('L2 norm') or with the square root of:
+<div class="highlight-python"><pre>gf_compute(&#x27;L2 norm&#x27;) or with the square root of:
 
-gf_asm('generic', mim, 0, 'u.u', -1, 'u', 1, mf, U);</pre>
+gf_asm(&#x27;generic&#x27;, mim, 0, &#x27;u.u&#x27;, -1, &#x27;u&#x27;, 1, mf, U);</pre>
 </div>
 <p>The nonhomogeneous Laplacian stiffness matrix of a scalar field can be evaluated with:</p>
-<div class="highlight-python"><pre>gf_asm('laplacian', mim, mf, mf_data, A) or equivalently with:
+<div class="highlight-python"><pre>gf_asm(&#x27;laplacian&#x27;, mim, mf, mf_data, A) or equivalently with:
 
-gf_asm('generic', mim, 2, 'A*Grad_Test2_u.Grad_Test_u', -1, 'u', 1, mf, U, 'A', 0, mf_data, A);</pre>
+gf_asm(&#x27;generic&#x27;, mim, 2, &#x27;A*Grad_Test2_u.Grad_Test_u&#x27;, -1, &#x27;u&#x27;, 1, mf, U, &#x27;A&#x27;, 0, mf_data, A);</pre>
 </div>
 </dd></dl>
 
@@ -293,7 +301,7 @@ input strain and output stress, instead of their Von-Mises equivalents.</p>
 <dl class="function">
 <dt id="getfem.asm_expression_analysis">
 <tt class="descname">asm_expression_analysis</tt><big>(</big><em>expression</em>, <em>*args</em><big>)</big><a class="headerlink" href="#getfem.asm_expression_analysis" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Synopsis: asm_expression_analysis(string expression [, <a class="reference external" href="mailto:{&#37;&#52;&#48;tm">{<span>&#64;</span>tm</a> mesh | MeshIm mim}] [, der_order] [, Model model] [, string varname, int is_variable[, {MeshFem mf | MeshImd mimd}], ...])</p>
+<dd><p>Synopsis: asm_expression_analysis(string expression [, {Mesh mesh | MeshIm mim}] [, der_order] [, Model model] [, string varname, int is_variable[, {MeshFem mf | MeshImd mimd}], ...])</p>
 <p>Analyse a high-level generic assembly expression and print
 information about the provided expression.</p>
 </dd></dl>
@@ -309,14 +317,14 @@ For details about the syntax of assembly expressions, please refer
 to the getfem user manual (or look at the file getfem_assembling.h
 in the getfem++ sources).</p>
 <p>For example, the L2 norm of a field can be computed with:</p>
-<div class="highlight-python"><pre>gf_compute('L2 norm') or with the square root of:
+<div class="highlight-python"><pre>gf_compute(&#x27;L2 norm&#x27;) or with the square root of:
 
-gf_asm('volumic','u=data(#1); V()+=u(i).u(j).comp(Base(#1).Base(#1))(i,j)',mim,mf,U)</pre>
+gf_asm(&#x27;volumic&#x27;,&#x27;u=data(#1); V()+=u(i).u(j).comp(Base(#1).Base(#1))(i,j)&#x27;,mim,mf,U)</pre>
 </div>
 <p>The Laplacian stiffness matrix can be evaluated with:</p>
-<div class="highlight-python"><pre>gf_asm('laplacian',mim, mf, mf_data, A) or equivalently with:
+<div class="highlight-python"><pre>gf_asm(&#x27;laplacian&#x27;,mim, mf, mf_data, A) or equivalently with:
 
-gf_asm('volumic','a=data(#2);M(#1,#1)+=sym(comp(Grad(#1).Grad(#1).Base(#2))(:,i,:,i,j).a(j))', mim,mf,mf_data,A);</pre>
+gf_asm(&#x27;volumic&#x27;,&#x27;a=data(#2);M(#1,#1)+=sym(comp(Grad(#1).Grad(#1).Base(#2))(:,i,:,i,j).a(j))&#x27;, mim,mf,mf_data,A);</pre>
 </div>
 </dd></dl>
 

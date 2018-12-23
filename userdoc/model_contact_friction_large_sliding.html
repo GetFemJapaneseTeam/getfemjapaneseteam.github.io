@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>摩擦ブリックとの有限すべり/有限変形接触 &mdash; GetFEM++</title>
+    <title>摩擦ブリック要素との有限すべり/有限変形接触 &mdash; GetFEM++</title>
     
     <link rel="stylesheet" href="../static/getfem.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
@@ -28,9 +28,9 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="モデル記述と基本モデルブリック" href="model.html" />
+    <link rel="up" title="モデル記述と基本モデルブリック要素" href="model.html" />
     <link rel="next" title="数値連続法と分岐" href="model_continuation.html" />
-    <link rel="prev" title="摩擦ブリックとの微小すべり接触" href="model_contact_friction.html" />
+    <link rel="prev" title="摩擦ブリック要素との微小すべり接触" href="model_contact_friction.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
  
 
@@ -46,14 +46,14 @@
           <a href="model_continuation.html" title="数値連続法と分岐"
              accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="model_contact_friction.html" title="摩擦ブリックとの微小すべり接触"
+          <a href="model_contact_friction.html" title="摩擦ブリック要素との微小すべり接触"
              accesskey="P">前へ</a> |</li>
         <li><a href="https://savannah.nongnu.org/projects/getfem" <img src="../static/icon.png" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="model.html" accesskey="U">モデル記述と基本モデルブリック</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li>
+          <li><a href="model.html" accesskey="U">モデル記述と基本モデルブリック要素</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -63,12 +63,12 @@
           <div class="body">
             
   <div class="section" id="large-sliding-large-deformation-contact-with-friction-bricks">
-<span id="ud-model-contact-friction-large"></span><span id="index-0"></span><h1>摩擦ブリックとの有限すべり/有限変形接触<a class="headerlink" href="#large-sliding-large-deformation-contact-with-friction-bricks" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<span id="ud-model-contact-friction-large"></span><span id="index-0"></span><h1>摩擦ブリック要素との有限すべり/有限変形接触<a class="headerlink" href="#large-sliding-large-deformation-contact-with-friction-bricks" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>変形可能な構造の有限すべり/有限変形接触に対処するための基本的なツールは弱形式言語でアクセス可能です。いくつかの補間変換（ <a class="reference internal" href="gasm_high.html#ud-gasm-high-transf"><em>補間変換</em></a> を参照）は接触検出を実行し、反対側の境界境界にある接触境界から積分できるように定義されています。実際の構成における単位法線ベクトルやCoulomb摩擦との接触を考慮する投影などの他の有用なツールも弱形式言語の演算子として定義されています。</p>
 <p>もちろん、大スライド/有限変形接触アルゴリズムの計算コストは小スライド-小変形よりも大幅に高くなります。</p>
 <div class="section" id="raytracing-interpolate-transformation">
 <span id="ud-model-contact-friction-raytrace-inter-trans"></span><h2>レイトレーシング補間変換<a class="headerlink" href="#raytracing-interpolate-transformation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>高レベル汎用構築に接触検出を組み込むために、特定の補間変換が定義されています（内挿変換の詳細については <a class="reference internal" href="gasm_high.html#ud-gasm-high-transf"><em>補間変換</em></a> を参照してください）。 <a class="reference internal" href="../biblio.html#ko-re2014" id="id1">[KO-RE2014]</a> に記載されているレイトレーシング接触検出に基づいており、以下で説明する基準を使用します。補間変換は、異なる可能性のある接触面を記憶します。ほとんどの方法で、潜在的接触面はマスターとスレーブの2つのカテゴリに分類されます（ <a class="reference internal" href="#ud-fig-masterslave"><em>図</em></a> を参照）。</p>
+<p>高水準汎用構築に接触検出を組み込むために、特定の補間変換が定義されています（内挿変換の詳細については <a class="reference internal" href="gasm_high.html#ud-gasm-high-transf"><em>補間変換</em></a> を参照してください）。 <a class="reference internal" href="../biblio.html#ko-re2014" id="id1">[KO-RE2014]</a> に記載されているレイトレーシング接触検出に基づいており、以下で説明する基準を使用します。補間変換は、異なる可能性のある接触面を記憶します。ほとんどの方法で、潜在的接触面はマスターとスレーブの2つのカテゴリに分類されます（ <a class="reference internal" href="#ud-fig-masterslave"><em>図</em></a> を参照）。</p>
 <div class="figure align-center" id="ud-fig-masterslave">
 <a class="reference internal image-reference" href="../images/getfemusermodelmasterslave.png"><img alt="../images/getfemusermodelmasterslave.png" src="../images/getfemusermodelmasterslave.png" style="width: 1092.6px; height: 720.0px;" /></a>
 </div>
@@ -114,7 +114,7 @@
 </pre></div>
 </div>
 <p>弱形式言語では、 <tt class="docutils literal"><span class="pre">expr1</span></tt> 、 <tt class="docutils literal"><span class="pre">expr2</span></tt> 、 <tt class="docutils literal"><span class="pre">expr3</span></tt> は計算されるべき異なる項に対応しています。 matlabインタフェースのデモプログラム <tt class="file docutils literal"><span class="pre">/interface/tests/matlab/demo_large_sliding_contact.m</span></tt> は、使用例を示しています。</p>
-<p>modelオブジェクトが使用されていない場合、変換は <cite>ga_workspace</cite> オブジェクトで直接使用することもできます。詳細は、 <tt class="file docutils literal"><span class="pre">getfem/getfem_contact_and_friction_common.h</span></tt> を参照してください。また、modelオブジェクトのフレームワークでは、この変換のインターフェース使用が、以下に説明するモデルブリックによって許可されることにも注意してください。</p>
+<p>modelオブジェクトが使用されていない場合、変換は <cite>ga_workspace</cite> オブジェクトで直接使用することもできます。詳細は、 <tt class="file docutils literal"><span class="pre">getfem/getfem_contact_and_friction_common.h</span></tt> を参照してください。また、modelオブジェクトのフレームワークでは、この変換のインターフェース使用が、以下に説明するモデルブリック要素によって許可されることにも注意してください。</p>
 </div>
 <div class="section" id="the-contact-pair-detection-algorithm">
 <h2>接触対検出アルゴリズム<a class="headerlink" href="#the-contact-pair-detection-algorithm" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -122,7 +122,7 @@
 <div class="figure align-center" id="ud-fig-algodetect">
 <a class="reference internal image-reference" href="../images/getfemusermodeldetectcontact.png"><img alt="../images/getfemusermodeldetectcontact.png" src="../images/getfemusermodeldetectcontact.png" style="width: 779.0px; height: 733.5px;" /></a>
 </div>
-<p>（<a class="reference internal" href="../biblio.html#pantz2008" id="id2">[Pantz2008]</a> など、)グローバルなトポロジカルな基準なしに有効な接触先と無効な接触先の間で確実に微分することは不可能です。しかし、この種の基準は、実施するのに非常にコストがかかる可能性があります。したがって、一般的には、可能性のあるすべてのケースをカバーすることができない簡単なヒューリスティックな基準を実装します。このような基準をここに提示します。これらははもちろん不完全であり、変更の対象となります。最初に、 <a class="reference internal" href="#ud-fig-invalidcontact"><em>図</em></a> では、条件を微分しなければならない有効なまたは無効な接触先の数の状況を見ることができます。</p>
+<p>（<a class="reference internal" href="../biblio.html#pantz2008" id="id2">[Pantz2008]</a> など、)グローバルなトポロジカルな基準なしに有効な接触先と無効な接触先の間で確実に微分することは不可能です。しかし、この種の基準は、実施するのに非常にコストがかかる可能性があります。したがって、一般的には、可能性のあるすべてのケースをカバーすることができない簡単なヒューリスティックな基準を実装します。このような基準をここに提示します。これらはもちろん不完全であり、変更の対象となります。最初に、 <a class="reference internal" href="#ud-fig-invalidcontact"><em>図</em></a> では、条件を微分しなければならない有効なまたは無効な接触先の数の状況を見ることができます。</p>
 <div class="figure align-center" id="ud-fig-invalidcontact">
 <a class="reference internal image-reference" href="../images/getfemusermodelfalsecontact1.png"><img alt="../images/getfemusermodelfalsecontact1.png" src="../images/getfemusermodelfalsecontact1.png" style="width: 1079.0px; height: 1036.0px;" /></a>
 </div>
@@ -147,7 +147,7 @@
 </li>
 <li><p class="first"><strong>基準2：投影/レイトレースポイントの検索が収束しない場合、接触対は削除されます。</strong> マスターエレメント上のスレーブポイントの投影/レイトレースを計算するために使用されたNewton法（および投影用のBFGS）表面が収束しない場合、対は考慮されず警告が生成されます。</p>
 </li>
-<li><p class="first"><strong>基準3：投影されたポイントは要素の内側に設ける。</strong> スレーブポイントは、顔の内側に留まるという制約なしにマスター要素の表面に投影されます（つまり、面が長くなることを意味します）。正射影が顔の外側にある場合、ペアは考慮されません。しかし、現状では、問題（J3）に対応するためには、随意の対応が考慮されなければなりません（この点では拘束を受けて顔に投影し、この時点で正常な円錐を試験する）。この基準は、 （F2）、（K2）、（M1）、（M2）のケースに対応できます。</p>
+<li><p class="first"><strong>基準3：投影されたポイントは要素の内側に設ける。</strong> スレーブポイントは、面の内側に留まるという制約なしにマスター要素の表面に投影されます（つまり、面が長くなることを意味します）。正射影が顔の外側にある場合、ペアは考慮されません。しかし、現状では、問題（J3）に対応するためには、随意の対応が考慮されなければなりません（この点では拘束を受けて顔に投影し、この時点で正常な円錐を試験する）。この基準は、 （F2）、（K2）、（M1）、（M2）のケースに対応できます。</p>
 </li>
 <li><p class="first"><strong>基準4：リリース距離が適用されます。</strong> スレーブポイントとマスター表面上の投影間の距離がリリース距離より大きい場合、接触対は考慮されません。リリース距離が適応され、変形がそれほど重要でない場合、（C）、（E）、（F1）、（G）、（H）の場合を処理できます。</p>
 </li>
@@ -176,11 +176,11 @@
 \displaystyle \Frac{1}{r} \left[\lambda_i + P_{n_y, {\mathscr F}}(\lambda_i + r\left(g_i n_y - \alpha(\varphi^h(X_i) - W_T(X_i)))\right)\right]= 0  ~~\forall i \in I_{\text{rig}},
 \end{array}\right."/></p>
 </div><p>ここで、 <img class="math" src="../images/math/7ebe2e02c0f1e8fd5e8a5dfd7436a872c4404d9c.png" alt="W_T, \alpha, P_{n_y, {\mathscr F}}" style="vertical-align: -6px"/> ... + 接線系</p>
-<p>申し訳ありませんが、このブリックは動作していません。</p>
+<p>申し訳ありませんが、このブリック要素は動作していません。</p>
 </div>
 </div>
 <div class="section" id="tools-of-the-high-level-generic-assembly-for-contact-with-friction">
-<h2>摩擦接触のための高レベル汎用構築のツール<a class="headerlink" href="#tools-of-the-high-level-generic-assembly-for-contact-with-friction" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>摩擦接触のための高水準汎用構築のツール<a class="headerlink" href="#tools-of-the-high-level-generic-assembly-for-contact-with-friction" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次の非線形演算子は、弱形式言語で定義されています（ <a class="reference internal" href="gasm_high.html#ud-gasm-high"><em>任意の項を計算する - 高水準の汎用的な構築手順 - 弱形式言語</em></a> 参照）。</p>
 <blockquote>
 <div><ul>
@@ -193,7 +193,7 @@
 
 \partial_{n} n_{trans}[\delta n] = \Frac{(I+ \nabla u)^{-T}\delta n - n_{trans}(n_{trans}\cdot \delta n)}{\|(I+\nabla u)^{-T} n\|}"/></p>
 </div></li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">Coulomb_friction_coupled_projection(lambda,</span> <span class="pre">n,</span> <span class="pre">Vs,</span> <span class="pre">g,</span> <span class="pre">f,</span> <span class="pre">r)</span></tt> ここで <tt class="docutils literal"><span class="pre">lambda</span></tt> は接触力であり、 <tt class="docutils literal"><span class="pre">n</span></tt> は単位法線ベクトルであり、 <tt class="docutils literal"><span class="pre">Vs</span></tt> は摺動速度であり、 <tt class="docutils literal"><span class="pre">g</span></tt> はギャップ、 <tt class="docutils literal"><span class="pre">f</span></tt> は摩擦係数、 <tt class="docutils literal"><span class="pre">r</span></tt> は正の増強パラメータです。演算子の式は次のとおりです。</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">Coulomb_friction_coupled_projection(lambda,</span> <span class="pre">n,</span> <span class="pre">Vs,</span> <span class="pre">g,</span> <span class="pre">f,</span> <span class="pre">r)</span></tt> ここで <tt class="docutils literal"><span class="pre">lambda</span></tt> は接触力であり、 <tt class="docutils literal"><span class="pre">n</span></tt> は単位法線ベクトルであり、 <tt class="docutils literal"><span class="pre">Vs</span></tt> はすべり速度であり、 <tt class="docutils literal"><span class="pre">g</span></tt> はギャップ、 <tt class="docutils literal"><span class="pre">f</span></tt> は摩擦係数、 <tt class="docutils literal"><span class="pre">r</span></tt> は正の増強パラメータです。演算子の式は次のとおりです。</p>
 <div class="math">
 <p><img src="../images/math/ab1cccd3f4b74db8cec569ddc4fcdf7e9f89112f.png" alt="P(\lambda, n, V_s, g, f, r) = -(\lambda\cdot n + rg)_- n + P_{B(n,\tau)}(\lambda - rV_s)
 
@@ -260,7 +260,7 @@
 </div>
 <div class="section" id="integral-contact-brick-with-raytrace">
 <span id="ud-model-contact-friction-large-hlgav"></span><h2>レイトレース付き積分接触要素<a class="headerlink" href="#integral-contact-brick-with-raytrace" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ブリックを追加します。</p>
+<p>ブリック要素を追加します。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">indbrick</span> <span class="o">=</span> <span class="n">add_integral_large_sliding_contact_brick_raytracing</span>
   <span class="p">(</span><span class="n">model</span> <span class="o">&amp;</span><span class="n">md</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dataname_r</span><span class="p">,</span>
    <span class="n">scalar_type</span> <span class="n">release_distance</span><span class="p">,</span>
@@ -268,12 +268,12 @@
    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dataname_alpha</span> <span class="o">=</span> <span class="s">&quot;1&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>このブリックは、複数の接触先の状況に対処できます。前のセクションで説明したように、モデルにレイトレーシング補間変換を追加します。その名前はコマンドによって取得できます。</p>
+<p>このブリック要素は、複数の接触先の状況に対処できます。前のセクションで説明したように、モデルにレイトレーシング補間変換を追加します。その名前はコマンドによって取得できます。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">transformation_name_of_large_sliding_contact_brick</span><span class="p">(</span><span class="n">model</span> <span class="o">&amp;</span><span class="n">md</span><span class="p">,</span>
                        <span class="n">size_type</span> <span class="n">indbrick</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>ブリックがモデルに追加されると、マスターとスレーブの接触境界を次の関数で追加する必要があります。</p>
+<p>ブリック要素がモデルに追加されると、マスターとスレーブの接触境界を次の関数で追加する必要があります。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">add_contact_boundary_to_large_sliding_contact_brick</span><span class="p">(</span><span class="n">model</span> <span class="o">&amp;</span><span class="n">md</span><span class="p">,</span>
     <span class="n">size_type</span> <span class="n">indbrick</span><span class="p">,</span> <span class="k">const</span> <span class="n">mesh_im</span> <span class="o">&amp;</span><span class="n">mim</span><span class="p">,</span> <span class="n">size_type</span> <span class="n">region</span><span class="p">,</span>
     <span class="kt">bool</span> <span class="n">is_master</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_slave</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">u</span><span class="p">,</span>
@@ -302,13 +302,13 @@
   </a></p>
   <h3><a href="../contents.html">目次</a></h3>
   <ul>
-<li><a class="reference internal" href="#">摩擦ブリックとの有限すべり/有限変形接触</a><ul>
+<li><a class="reference internal" href="#">摩擦ブリック要素との有限すべり/有限変形接触</a><ul>
 <li><a class="reference internal" href="#raytracing-interpolate-transformation">レイトレーシング補間変換</a></li>
 <li><a class="reference internal" href="#the-contact-pair-detection-algorithm">接触対検出アルゴリズム</a><ul>
 <li><a class="reference internal" href="#nodal-contact-brick-with-projection">投影による節点接触要素</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#tools-of-the-high-level-generic-assembly-for-contact-with-friction">摩擦接触のための高レベル汎用構築のツール</a></li>
+<li><a class="reference internal" href="#tools-of-the-high-level-generic-assembly-for-contact-with-friction">摩擦接触のための高水準汎用構築のツール</a></li>
 <li><a class="reference internal" href="#integral-contact-brick-with-raytrace">レイトレース付き積分接触要素</a></li>
 </ul>
 </li>
@@ -316,7 +316,7 @@
 
   <h4>前のトピックへ</h4>
   <p class="topless"><a href="model_contact_friction.html"
-                        title="前の章へ">摩擦ブリックとの微小すべり接触</a></p>
+                        title="前の章へ">摩擦ブリック要素との微小すべり接触</a></p>
   <h4>次のトピックへ</h4>
   <p class="topless"><a href="model_continuation.html"
                         title="次の章へ">数値連続法と分岐</a></p>            <h3>Download</h3>
@@ -367,14 +367,14 @@
           <a href="model_continuation.html" title="数値連続法と分岐"
              >次へ</a> |</li>
         <li class="right" >
-          <a href="model_contact_friction.html" title="摩擦ブリックとの微小すべり接触"
+          <a href="model_contact_friction.html" title="摩擦ブリック要素との微小すべり接触"
              >前へ</a> |</li>
         <li><a href="https://savannah.nongnu.org/projects/getfem" <img src="../static/icon.png" alt=""
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li>
-          <li><a href="model.html" >モデル記述と基本モデルブリック</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li>
+          <li><a href="model.html" >モデル記述と基本モデルブリック要素</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

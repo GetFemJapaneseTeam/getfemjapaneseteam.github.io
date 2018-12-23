@@ -28,7 +28,7 @@
     <link rel="author" title="このドキュメントについて" href="../about.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="top" title="GetFEM++" href="../index.html" />
-    <link rel="up" title="User Documentation" href="index.html" />
+    <link rel="up" title="ユーザドキュメント" href="index.html" />
     <link rel="next" title="と ノルムの計算" href="computeL2H1.html" />
     <link rel="prev" title="レベル集合法、拡張有限要素法(Xfem)、仮想領域有限要素法、切断有限要素法" href="xfem.html" />
     <link rel="shortcut icon" type="image/png" href="../static/icon.png" />
@@ -52,7 +52,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" accesskey="U">User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -63,13 +63,13 @@
             
   <div class="section" id="interpolation-of-a-finite-element-method-on-non-matching-meshes">
 <span id="ud-internmm"></span><h1>非適合メッシュ上の有限要素法の補間<a class="headerlink" href="#interpolation-of-a-finite-element-method-on-non-matching-meshes" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>特殊な有限要素法は、 <tt class="file docutils literal"><span class="pre">getfem/getfem_interpolated_fem.h</span></tt> で定義されています。これは実際の有限要素法ではありませんが、別のメッシュで定義された有限要素法を補間するpseudo-femです。異なるメッシュで定義された有限要素法を使用して行列をアセンブルする必要がある場合は、&#8221;interpolated fem&#8221; を使用することができます。</p>
+<p>特殊な有限要素法は、 <tt class="file docutils literal"><span class="pre">getfem/getfem_interpolated_fem.h</span></tt> で定義されています。これは実際の有限要素法ではありませんが、別のメッシュで定義された有限要素法を補間する擬似有限要素法です。異なるメッシュで定義された有限要素法を使用して行列をアセンブルする必要がある場合は、&#8221;interpolated fem&#8221; を使用することができます。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">getfem</span><span class="o">::</span><span class="n">new_interpolated_fem</span><span class="p">(</span><span class="n">getfem</span><span class="o">::</span><span class="n">mesh_fem</span> <span class="n">mf</span><span class="p">,</span> <span class="n">getfem</span><span class="o">::</span><span class="n">mesh_im</span> <span class="n">mim</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>有限要素法の各基底関数は補間されなければならないので、そのような計算は重い手順である可能性があります。デフォルトでは、補間された有限要素法オブジェクトは補間データを格納します。</p>
-<p>補間は積分方法 <tt class="docutils literal"><span class="pre">mim</span></tt> の各Gauss点で行われるので、構築手順でこれらの積分方法を使わなければなりません。</p>
-<p>たとえば、2つの異なるメッシュで定義された2つの異なる有限要素法の間の質量行列を計算する必要がある場合、これは2番目の有限要素法を補間するコードの例です。 <tt class="docutils literal"><span class="pre">mf</span></tt> が有限要素法を記述し、 <tt class="docutils literal"><span class="pre">mim</span></tt> が選択された積分法であると仮定して、最初の有限要素法メッシュ上で</p>
+<p>補間は積分法 <tt class="docutils literal"><span class="pre">mim</span></tt> の各Gauss点で行われるので、構築手順でこれらの積分法を使わなければなりません。</p>
+<p>たとえば、2つの異なるメッシュで定義された2つの異なる有限要素法の間の質量行列を計算する必要がある場合、これは2番目の有限要素法を補間するコードの例です。 <tt class="docutils literal"><span class="pre">mf</span></tt> が有限要素法を記述し、 <tt class="docutils literal"><span class="pre">mim</span></tt> が選択された積分法であると仮定して、最初の有限要素法メッシュ上で次の関数を実行します。</p>
 <div class="highlight-c++"><div class="highlight"><pre><span class="n">getfem</span><span class="o">::</span><span class="n">mesh_fem</span> <span class="n">mf_interpole</span><span class="p">(</span><span class="n">mfu</span><span class="p">.</span><span class="n">linked_mesh</span><span class="p">());</span>
 <span class="n">pfem</span> <span class="n">ifem</span> <span class="o">=</span> <span class="n">getfem</span><span class="o">::</span><span class="n">new_interpolated_fem</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">mim</span><span class="p">);</span>
 <span class="n">dal</span><span class="o">::</span><span class="n">bit_vector</span> <span class="n">nn</span> <span class="o">=</span> <span class="n">mfu</span><span class="p">.</span><span class="n">convex_index</span><span class="p">();</span>
@@ -78,9 +78,9 @@
 <span class="n">del_interpolated_fem</span><span class="p">(</span><span class="n">ifem</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">ifem</span></tt> が指すオブジェクトには、補間に関するすべての情報が含まれています。それは多くのメモリを使用する可能性があります。 pfemはスマートポインタ（boost <a class="reference external" href="http://www.boost.org/libs/smart_ptr/intrusive_ptr.html">intrusive_ptr</a> ）であるため、補間された有限要素法は、最後のポインタが破棄されると自動的に破棄されます。より正確な精度を得るには、その次数を増やすのではなく、積分メソッドを（たとえば、 <tt class="docutils literal"><span class="pre">IM_STRUCTURED_COMPOSITE</span></tt> を使って）改良する方が良いでしょう。</p>
+<p><tt class="docutils literal"><span class="pre">ifem</span></tt> が指すオブジェクトには、補間に関するすべての情報が含まれています。それは多くのメモリを使用する可能性があります。 pfemはスマートポインタ（boost <a class="reference external" href="http://www.boost.org/libs/smart_ptr/intrusive_ptr.html">intrusive_ptr</a> ）であるため、補間された有限要素法は、最後のポインタが破棄されると自動的に破棄されます。より正確な精度を得るには、その次数を増やすのではなく、積分法を（たとえば、 <tt class="docutils literal"><span class="pre">IM_STRUCTURED_COMPOSITE</span></tt> を使って）改良する方が良いでしょう。</p>
 <div class="section" id="mixed-methods-with-different-meshes">
-<h2>異なるメッシュの混合メソッド<a class="headerlink" href="#mixed-methods-with-different-meshes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>異なるメッシュの混合法<a class="headerlink" href="#mixed-methods-with-different-meshes" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><p>説明する...</p>
 </div></blockquote>
@@ -105,7 +105,7 @@
   <h3><a href="../contents.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">非適合メッシュ上の有限要素法の補間</a><ul>
-<li><a class="reference internal" href="#mixed-methods-with-different-meshes">異なるメッシュの混合メソッド</a></li>
+<li><a class="reference internal" href="#mixed-methods-with-different-meshes">異なるメッシュの混合法</a></li>
 <li><a class="reference internal" href="#mortar-methods">モルタル法</a></li>
 </ul>
 </li>
@@ -170,7 +170,7 @@
                  style="vertical-align: middle; margin-top: -1px"/></li></a>
         <li><a href="../index.html">GetFEM++</a> &raquo;</li>
 
-          <li><a href="index.html" >User Documentation</a> &raquo;</li> 
+          <li><a href="index.html" >ユーザドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
